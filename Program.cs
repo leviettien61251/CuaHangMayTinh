@@ -18,7 +18,6 @@ namespace CuaHangMayTinh
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
             aaaaaaaaaaaaaaaaaaaaaaaa
-            test 2
         }
     }
 }
