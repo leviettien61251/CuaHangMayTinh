@@ -17,7 +17,7 @@ namespace CuaHangMayTinh
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
-            aaaaaaaaaaaaaaaaaaaaaaaa
+            test3333333333
         }
     }
 }
