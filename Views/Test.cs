@@ -8,6 +8,6 @@ namespace CuaHangMayTinh.Views
 {
     static class Test
     {
-        //tesst4
+        
     }
 }
