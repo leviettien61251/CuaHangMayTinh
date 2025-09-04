@@ -22,33 +22,71 @@ namespace CuaHangMayTinh.Views
             _accountModel = new AccountModel();
         }
         string connectionString = @"Data Source=TIENLV;Initial Catalog=CuaHangMayTinh;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
-
+        string scritp = @"";
         SqlConnection conn;
         SqlCommand cmd;
         SqlDataReader rdr;
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            conn = new SqlConnection(connectionString);
+            conn = new SqlConnection(connectionString);//kết nối với database
         }
 
         
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            var username = textBoxUsername.Text;
-            var password = textBoxPassword.Text;
-            
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password) ) 
+
+            try
             {
-                MessageBox.Show("Hãy nhập đầy đủ thông tin!");
-                return;
+                var username = textBoxUsername.Text;//lấy username từ textbox
+                var password = textBoxPassword.Text;//lấy password từ textbox
+
+                if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+                {
+                    MessageBox.Show("Hãy nhập đầy đủ thông tin!");//thông báo lỗi
+                    return;
+                }
+                else
+                {
+                    _accountModel.DangNhap(username, password);
+                    MessageBox.Show("Đăng nhập thành công!"); //thông báo thành công
+                    this.Hide(); //ẩn form đăng nhập
+                }
             }
-            else
+            catch (Exception ex)
             {
-                _accountModel.DangNhap(username, password);
-                MessageBox.Show("Đăng nhập thành công!");
-                this.Close();
-            }  
+                throw ex;
+            }
+            
+              
+        }
+
+        private void labelQuenMK_Click(object sender, EventArgs e)
+        {
+            //khi ấn vào sẽ chuyển sang FormDoiMk
+        }
+
+        private void labelRegister_Click(object sender, EventArgs e)
+        {
+            //khi ấn vào sẽ chuyển sang FormRegister
+        }
+
+        private void buttonShowHidePassword_Click(object sender, EventArgs e)
+        {
+            textBoxPassword.UseSystemPasswordChar = !textBoxPassword.UseSystemPasswordChar;
+        }
+
+        private void buttonThoat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Xác nhận thoát chương trình?","Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }
