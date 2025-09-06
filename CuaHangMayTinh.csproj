@@ -166,12 +166,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\User.cs" />
-    <Compile Include="Models\AccountModel.cs" />
-    <Compile Include="Models\DataProvider.cs" />
-    <Compile Include="Models\DatabaseHelper.cs" />
+    <Compile Include="Controllers\DataProvider.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Models\Class1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\FormTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormTest.Designer.cs">
+      <DependentUpon>FormTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +193,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\FormTest.resx">
+      <DependentUpon>FormTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>

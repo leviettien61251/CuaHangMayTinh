@@ -10,28 +10,37 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CuaHangMayTinh.Models;
 using Microsoft.Data.SqlClient;
+using Microsoft.IdentityModel.Tokens;
 
 namespace CuaHangMayTinh.Views
 {
     public partial class LoginForm : Form
     {
-        private AccountModel _accountModel;
+
         public LoginForm()
         {
             InitializeComponent();
-            _accountModel = new AccountModel();
+
         }
-        string connectionString = @"Data Source=TIENLV;Initial Catalog=CuaHangMayTinh;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
-        string scritp = @"";
-        SqlConnection conn;
-        SqlCommand cmd;
-        SqlDataReader rdr;
-        private void LoginForm_Load(object sender, EventArgs e)
+        public LoginForm(string username, string password)
         {
-            conn = new SqlConnection(connectionString);//kết nối với database
+            InitializeComponent();
+
         }
 
-        
+        string connectionString = @"Data Source=TIENLV;Initial Catalog=CuaHangMayTinh;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        string scritp = @"";
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private bool checkLogin(string username, string password)
+        {
+
+            return AccountController.Instance.Login(username, password);
+        }
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
@@ -43,22 +52,36 @@ namespace CuaHangMayTinh.Views
 
                 if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
                 {
-                    MessageBox.Show("Hãy nhập đầy đủ thông tin!");//thông báo lỗi
+                    MessageBox.Show("Hãy nhập đầy đủ thông tin!");
                     return;
                 }
                 else
                 {
-                    _accountModel.DangNhap(username, password);
-                    MessageBox.Show("Đăng nhập thành công!"); //thông báo thành công
-                    this.Hide(); //ẩn form đăng nhập
+                    if (checkLogin(username, password))
+                    {
+                        FormTest F_Test = new FormTest();
+                        MessageBox.Show("Đăng nhập thành công!");
+                        this.Hide(); //ẩn form đăng nhập
+                        F_Test.ShowDialog();
+                        this.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sai tên tài khoản hoặc mật khẩu!");
+                        return;
+                    }
                 }
+
+
+
+
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-            
-              
+
+
         }
 
         private void labelQuenMK_Click(object sender, EventArgs e)
@@ -83,7 +106,7 @@ namespace CuaHangMayTinh.Views
 
         private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Xác nhận thoát chương trình?","Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
+            if (MessageBox.Show("Xác nhận thoát chương trình?", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
             {
                 e.Cancel = true;
             }
