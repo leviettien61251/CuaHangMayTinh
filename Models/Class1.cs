@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CuaHangMayTinh.Controllers
+namespace CuaHangMayTinh.Models
 {
-    internal class User
+    internal class Class1
     {
-        //tesssssssssssssssss
     }
 }
