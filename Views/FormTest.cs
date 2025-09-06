@@ -20,13 +20,8 @@ namespace CuaHangMayTinh.Views
         }
         void LoadData()
         {
-            string script = @"EXEC usp_KiemTraThongTinTaiKhoan @Username , @Password 
-                            ";
-            //string script = @"SELECT * FROM TaiKhoan
-            // 
-            dataGridViewTest.DataSource = DataProvider.Instance.ExecuteQuery(script, new object[]{"a", "a"});
-            //dataGridViewTest.DataSource = DataProvider.Instance.ExecuteQuery(script);
-
+            string script = @"EXEC usp_KiemTraThongTinTaiKhoan @Username , @Password ";
+            dataGridViewTest.DataSource = DataProvider.Instance.ExecuteQuery(script, new object[] { "a", "a" });
         }
 
         private void FormTest_Load(object sender, EventArgs e)

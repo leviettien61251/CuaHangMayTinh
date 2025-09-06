@@ -25,11 +25,7 @@ namespace CuaHangMayTinh.Views
         public LoginForm(string username, string password)
         {
             InitializeComponent();
-
         }
-
-        string connectionString = @"Data Source=TIENLV;Initial Catalog=CuaHangMayTinh;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
-        string scritp = @"";
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
@@ -38,7 +34,6 @@ namespace CuaHangMayTinh.Views
 
         private bool checkLogin(string username, string password)
         {
-
             return AccountController.Instance.Login(username, password);
         }
 
@@ -71,9 +66,6 @@ namespace CuaHangMayTinh.Views
                         return;
                     }
                 }
-
-
-
 
             }
             catch (Exception ex)
