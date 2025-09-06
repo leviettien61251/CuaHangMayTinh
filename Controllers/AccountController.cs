@@ -26,7 +26,10 @@ namespace CuaHangMayTinh.Models
                 }
                 return instance;
             }
-            private set { instance = value; }
+            private set
+            {
+                instance = value;
+            }
         }
 
         private AccountController() { }
@@ -37,8 +40,6 @@ namespace CuaHangMayTinh.Models
         {
             try
             {
-
-
                 script = @"EXEC usp_KiemTraThongTinTaiKhoan @Username , @Password ";
 
                 DataTable result = DataProvider.Instance.ExecuteQuery(script, new object[] { username, password });
