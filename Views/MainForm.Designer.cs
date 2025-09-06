@@ -682,7 +682,7 @@
             this.tabSales.Location = new System.Drawing.Point(4, 22);
             this.tabSales.Name = "tabSales";
             this.tabSales.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSales.Size = new System.Drawing.Size(1176, 549);
+            this.tabSales.Size = new System.Drawing.Size(1176, 547);
             this.tabSales.TabIndex = 1;
             this.tabSales.Text = "Bán hàng";
             this.tabSales.UseVisualStyleBackColor = true;
@@ -700,7 +700,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.grbInvoiceDetails);
-            this.splitContainer2.Size = new System.Drawing.Size(1170, 543);
+            this.splitContainer2.Size = new System.Drawing.Size(1170, 541);
             this.splitContainer2.SplitterDistance = 350;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -710,7 +710,7 @@
             this.grbInvoiceInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grbInvoiceInfo.Location = new System.Drawing.Point(0, 0);
             this.grbInvoiceInfo.Name = "grbInvoiceInfo";
-            this.grbInvoiceInfo.Size = new System.Drawing.Size(350, 543);
+            this.grbInvoiceInfo.Size = new System.Drawing.Size(350, 541);
             this.grbInvoiceInfo.TabIndex = 0;
             this.grbInvoiceInfo.TabStop = false;
             this.grbInvoiceInfo.Text = "Thông tin hóa đơn";
@@ -742,7 +742,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(344, 524);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(344, 522);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // label8
@@ -839,7 +839,7 @@
             // 
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(3, 473);
+            this.label13.Location = new System.Drawing.Point(3, 472);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(47, 13);
             this.label13.TabIndex = 10;
@@ -852,7 +852,7 @@
             this.txtNotes.Multiline = true;
             this.txtNotes.Name = "txtNotes";
             this.txtNotes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtNotes.Size = new System.Drawing.Size(235, 83);
+            this.txtNotes.Size = new System.Drawing.Size(235, 81);
             this.txtNotes.TabIndex = 11;
             // 
             // grbInvoiceDetails
@@ -861,7 +861,7 @@
             this.grbInvoiceDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grbInvoiceDetails.Location = new System.Drawing.Point(0, 0);
             this.grbInvoiceDetails.Name = "grbInvoiceDetails";
-            this.grbInvoiceDetails.Size = new System.Drawing.Size(816, 543);
+            this.grbInvoiceDetails.Size = new System.Drawing.Size(816, 541);
             this.grbInvoiceDetails.TabIndex = 0;
             this.grbInvoiceDetails.TabStop = false;
             this.grbInvoiceDetails.Text = "Chi tiết hóa đơn";
@@ -882,7 +882,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(810, 524);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(810, 522);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // flowLayoutPanel3
@@ -920,7 +920,7 @@
             this.dgvInvoiceDetails.Location = new System.Drawing.Point(3, 43);
             this.dgvInvoiceDetails.Name = "dgvInvoiceDetails";
             this.dgvInvoiceDetails.ReadOnly = true;
-            this.dgvInvoiceDetails.Size = new System.Drawing.Size(804, 388);
+            this.dgvInvoiceDetails.Size = new System.Drawing.Size(804, 386);
             this.dgvInvoiceDetails.TabIndex = 1;
             // 
             // flowLayoutPanel4
@@ -930,7 +930,7 @@
             this.flowLayoutPanel4.Controls.Add(this.label16);
             this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 437);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 435);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Size = new System.Drawing.Size(804, 34);
             this.flowLayoutPanel4.TabIndex = 2;
@@ -975,7 +975,7 @@
             this.flowLayoutPanel5.Controls.Add(this.btnPrintInvoice);
             this.flowLayoutPanel5.Controls.Add(this.btnCancel);
             this.flowLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 477);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 475);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
             this.flowLayoutPanel5.Size = new System.Drawing.Size(804, 44);
             this.flowLayoutPanel5.TabIndex = 3;
@@ -1016,7 +1016,7 @@
             this.tabStatistics.Location = new System.Drawing.Point(4, 22);
             this.tabStatistics.Name = "tabStatistics";
             this.tabStatistics.Padding = new System.Windows.Forms.Padding(3);
-            this.tabStatistics.Size = new System.Drawing.Size(1176, 549);
+            this.tabStatistics.Size = new System.Drawing.Size(1176, 547);
             this.tabStatistics.TabIndex = 2;
             this.tabStatistics.Text = "Thống kê";
             this.tabStatistics.UseVisualStyleBackColor = true;
@@ -1033,7 +1033,7 @@
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1170, 543);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1170, 541);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // grbFilter
@@ -1111,7 +1111,7 @@
             this.tabControlStats.Location = new System.Drawing.Point(3, 73);
             this.tabControlStats.Name = "tabControlStats";
             this.tabControlStats.SelectedIndex = 0;
-            this.tabControlStats.Size = new System.Drawing.Size(1164, 467);
+            this.tabControlStats.Size = new System.Drawing.Size(1164, 465);
             this.tabControlStats.TabIndex = 1;
             // 
             // tabRevenue
@@ -1120,7 +1120,7 @@
             this.tabRevenue.Location = new System.Drawing.Point(4, 22);
             this.tabRevenue.Name = "tabRevenue";
             this.tabRevenue.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRevenue.Size = new System.Drawing.Size(1156, 441);
+            this.tabRevenue.Size = new System.Drawing.Size(1156, 439);
             this.tabRevenue.TabIndex = 0;
             this.tabRevenue.Text = "Doanh thu";
             this.tabRevenue.UseVisualStyleBackColor = true;
@@ -1137,7 +1137,7 @@
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(1150, 435);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(1150, 433);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // panelChart
@@ -1147,7 +1147,7 @@
             this.panelChart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChart.Location = new System.Drawing.Point(3, 3);
             this.panelChart.Name = "panelChart";
-            this.panelChart.Size = new System.Drawing.Size(1144, 298);
+            this.panelChart.Size = new System.Drawing.Size(1144, 297);
             this.panelChart.TabIndex = 0;
             // 
             // label18
@@ -1157,7 +1157,7 @@
             this.label18.ForeColor = System.Drawing.Color.Gray;
             this.label18.Location = new System.Drawing.Point(0, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(1142, 296);
+            this.label18.Size = new System.Drawing.Size(1142, 295);
             this.label18.TabIndex = 0;
             this.label18.Text = "BIỂU ĐỒ DOANH THU THEO THÁNG";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1166,10 +1166,10 @@
             // 
             this.dgvRevenue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRevenue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvRevenue.Location = new System.Drawing.Point(3, 307);
+            this.dgvRevenue.Location = new System.Drawing.Point(3, 306);
             this.dgvRevenue.Name = "dgvRevenue";
             this.dgvRevenue.ReadOnly = true;
-            this.dgvRevenue.Size = new System.Drawing.Size(1144, 125);
+            this.dgvRevenue.Size = new System.Drawing.Size(1144, 124);
             this.dgvRevenue.TabIndex = 1;
             // 
             // tabBestSellers
@@ -1178,7 +1178,7 @@
             this.tabBestSellers.Location = new System.Drawing.Point(4, 22);
             this.tabBestSellers.Name = "tabBestSellers";
             this.tabBestSellers.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBestSellers.Size = new System.Drawing.Size(1156, 441);
+            this.tabBestSellers.Size = new System.Drawing.Size(1156, 439);
             this.tabBestSellers.TabIndex = 1;
             this.tabBestSellers.Text = "Sản phẩm bán chạy";
             this.tabBestSellers.UseVisualStyleBackColor = true;
@@ -1190,7 +1190,7 @@
             this.dgvBestSellers.Location = new System.Drawing.Point(3, 3);
             this.dgvBestSellers.Name = "dgvBestSellers";
             this.dgvBestSellers.ReadOnly = true;
-            this.dgvBestSellers.Size = new System.Drawing.Size(1150, 435);
+            this.dgvBestSellers.Size = new System.Drawing.Size(1150, 433);
             this.dgvBestSellers.TabIndex = 0;
             // 
             // MainForm
