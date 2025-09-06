@@ -55,7 +55,7 @@ namespace CuaHangMayTinh.Views
                     if (checkLogin(username, password))
                     {
                         FormTest F_Test = new FormTest();
-                        MessageBox.Show("Đăng nhập thành công!");
+                        //MessageBox.Show("Đăng nhập thành công!");
                         this.Hide(); //ẩn form đăng nhập
                         F_Test.ShowDialog();
                         this.Show();

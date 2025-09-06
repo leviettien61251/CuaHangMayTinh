@@ -168,7 +168,11 @@
   <ItemGroup>
     <Compile Include="Controllers\DataProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Models\Class1.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\FormTest.cs">
