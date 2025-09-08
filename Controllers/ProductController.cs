@@ -85,5 +85,11 @@ namespace CuaHangMayTinh.Controllers
             DataProvider.Instance.ExecuteNonQuery(script, new object[] { MaSP });
 
         }
+
+        public void SearchProduct(string Search, DataGridView dataGridViewName)
+        {
+            string script = @"EXEC usp_SearchProductByName_Category_Supplier @Search ";
+            dataGridViewName.DataSource = DataProvider.Instance.ExecuteQuery(script, new object[] { Search });
+        }
     }
 }

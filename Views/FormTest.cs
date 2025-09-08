@@ -217,10 +217,10 @@ namespace CuaHangMayTinh.Views
             textBoxMaSP.Text = dataGridViewProduct.CurrentRow.Cells[0].Value.ToString();
             textBoxTenSP.Text = dataGridViewProduct.CurrentRow.Cells[1].Value.ToString();
             comboBoxCategory.Text = dataGridViewProduct.CurrentRow.Cells[2].Value.ToString();
-            comboBoxMaNCC.Text = dataGridViewProduct.CurrentRow.Cells[3].Value.ToString();
-            textBoxGiaNhap.Text = dataGridViewProduct.CurrentRow.Cells[6].Value.ToString();
-            textBoxGiaBan.Text = dataGridViewProduct.CurrentRow.Cells[7].Value.ToString();
-            textBoxSoLuong.Text = dataGridViewProduct.CurrentRow.Cells[8].Value.ToString();
+            comboBoxMaNCC.Text = dataGridViewProduct.CurrentRow.Cells[4].Value.ToString();
+            textBoxGiaNhap.Text = dataGridViewProduct.CurrentRow.Cells[8].Value.ToString();
+            textBoxGiaBan.Text = dataGridViewProduct.CurrentRow.Cells[9].Value.ToString();
+            textBoxSoLuong.Text = dataGridViewProduct.CurrentRow.Cells[10].Value.ToString();
         }
 
         #endregion

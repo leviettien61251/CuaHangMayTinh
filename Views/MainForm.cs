@@ -45,7 +45,7 @@ namespace ComputerStoreManagement
             Form form = new Form();
             switch (e.ClickedItem.Name)
             {
-                case "Sản phẩm":
+                case "SanPham":
                     FormTestSanPham F_Test = new FormTestSanPham();
                     form = F_Test;
                     //F_Test.Show();
