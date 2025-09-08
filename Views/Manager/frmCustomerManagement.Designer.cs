@@ -326,6 +326,7 @@
             this.Controls.Add(this.grbCustomerInfo);
             this.Name = "frmCustomerManagement";
             this.Text = "frmCustomerManagement";
+            this.Load += new System.EventHandler(this.frmCustomerManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
