@@ -1,4 +1,5 @@
 ﻿using CuaHangMayTinh.Views;
+using CuaHangMayTinh.Views.Manager;
 using System;
 using System.Windows.Forms;
 
@@ -30,6 +31,10 @@ namespace ComputerStoreManagement
                 case "FormTest":
                     FormTest F_Test = new FormTest();
                     form = F_Test;
+                    break;
+                case "frmCustomerManagement":
+                    frmCustomerManagement F_CusManage = new frmCustomerManagement();
+                    form = F_CusManage;
                     break;
                 default:
                     break;

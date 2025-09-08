@@ -54,11 +54,13 @@
             this.btnAddNew = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.labelCHeckID = new System.Windows.Forms.Label();
             this.grbProductList = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.txtSearchProduct = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.labelNCC = new System.Windows.Forms.Label();
             this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.tabSales = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
@@ -108,8 +110,6 @@
             this.tabBestSellers = new System.Windows.Forms.TabPage();
             this.dgvBestSellers = new System.Windows.Forms.DataGridView();
             this.danhMucTableAdapter = new CuaHangMayTinh.CuaHangMayTinhDataSet2TableAdapters.DanhMucTableAdapter();
-            this.labelCHeckID = new System.Windows.Forms.Label();
-            this.labelNCC = new System.Windows.Forms.Label();
             this.tabControlMain.SuspendLayout();
             this.tabProducts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -421,6 +421,15 @@
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
+            // labelCHeckID
+            // 
+            this.labelCHeckID.AutoSize = true;
+            this.labelCHeckID.Location = new System.Drawing.Point(105, 532);
+            this.labelCHeckID.Name = "labelCHeckID";
+            this.labelCHeckID.Size = new System.Drawing.Size(24, 13);
+            this.labelCHeckID.TabIndex = 17;
+            this.labelCHeckID.Text = "ID: ";
+            // 
             // grbProductList
             // 
             this.grbProductList.Controls.Add(this.tableLayoutPanel2);
@@ -474,6 +483,15 @@
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // labelNCC
+            // 
+            this.labelNCC.AutoSize = true;
+            this.labelNCC.Location = new System.Drawing.Point(295, 0);
+            this.labelNCC.Name = "labelNCC";
+            this.labelNCC.Size = new System.Drawing.Size(35, 13);
+            this.labelNCC.TabIndex = 2;
+            this.labelNCC.Text = "NCC: ";
             // 
             // dgvProducts
             // 
@@ -1006,24 +1024,6 @@
             // danhMucTableAdapter
             // 
             this.danhMucTableAdapter.ClearBeforeFill = true;
-            // 
-            // labelCHeckID
-            // 
-            this.labelCHeckID.AutoSize = true;
-            this.labelCHeckID.Location = new System.Drawing.Point(105, 532);
-            this.labelCHeckID.Name = "labelCHeckID";
-            this.labelCHeckID.Size = new System.Drawing.Size(24, 13);
-            this.labelCHeckID.TabIndex = 17;
-            this.labelCHeckID.Text = "ID: ";
-            // 
-            // labelNCC
-            // 
-            this.labelNCC.AutoSize = true;
-            this.labelNCC.Location = new System.Drawing.Point(295, 0);
-            this.labelNCC.Name = "labelNCC";
-            this.labelNCC.Size = new System.Drawing.Size(35, 13);
-            this.labelNCC.TabIndex = 2;
-            this.labelNCC.Text = "NCC: ";
             // 
             // FormTestSanPham
             // 
