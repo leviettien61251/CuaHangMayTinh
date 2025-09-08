@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CuaHangMayTinh.Views.Manager
+namespace CuaHangMayTinh.Views.Sale
 {
-    public partial class frmCustomerManagement : Form
+    public partial class frmCreateInvoice : Form
     {
-        public frmCustomerManagement()
+        public frmCreateInvoice()
         {
             InitializeComponent();
         }
 
-        private void frmCustomerManagement_Load(object sender, EventArgs e)
+        private void frmCreateInvoice_Load(object sender, EventArgs e)
         {
 
         }

@@ -349,6 +349,7 @@
             this.Controls.Add(this.grbSupplierInfo);
             this.Name = "frmSupplierManagement";
             this.Text = "frmSupplierManagement";
+            this.Load += new System.EventHandler(this.frmSupplierManagement_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();

@@ -374,6 +374,7 @@
             this.Controls.Add(this.grbFilter);
             this.Name = "frmInventoryReport";
             this.Text = "frmInventoryReport";
+            this.Load += new System.EventHandler(this.frmInventoryReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();

@@ -376,6 +376,7 @@
             this.Controls.Add(this.grbFilter);
             this.Name = "frmRevenueReport";
             this.Text = "frmRevenueReport";
+            this.Load += new System.EventHandler(this.frmRevenueReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.grbDetails.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRevenueDetails)).EndInit();

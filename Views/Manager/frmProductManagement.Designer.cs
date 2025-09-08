@@ -379,6 +379,7 @@
             this.Controls.Add(this.grbProductInfo);
             this.Name = "frmProductManagement";
             this.Text = "frmProductManagement";
+            this.Load += new System.EventHandler(this.frmProductManagement_Load);
             this.grbProductList.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);

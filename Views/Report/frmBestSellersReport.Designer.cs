@@ -326,6 +326,7 @@
             this.Controls.Add(this.labelChart);
             this.Name = "frmBestSellersReport";
             this.Text = "frmBestSellersReport";
+            this.Load += new System.EventHandler(this.frmBestSellersReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnDelete = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
@@ -48,7 +49,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.cbPosition = new System.Windows.Forms.ComboBox();
             this.btnAddNew = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -377,6 +378,7 @@
             this.Controls.Add(this.grbEmployeeInfo);
             this.Name = "frmEmployeeManagement";
             this.Text = "frmEmployeeManagement";
+            this.Load += new System.EventHandler(this.frmEmployeeManagement_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();

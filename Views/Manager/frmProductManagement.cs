@@ -16,5 +16,10 @@ namespace CuaHangMayTinh.Views.Manager
         {
             InitializeComponent();
         }
+
+        private void frmProductManagement_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

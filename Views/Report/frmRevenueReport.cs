@@ -16,5 +16,10 @@ namespace CuaHangMayTinh.Views.Report
         {
             InitializeComponent();
         }
+
+        private void frmRevenueReport_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
