@@ -58,5 +58,15 @@ namespace ComputerStoreManagement
             form.Show();
             form.BringToFront();
         }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
