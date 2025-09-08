@@ -64,7 +64,7 @@ namespace CuaHangMayTinh.Controllers
             }
 
             DropDownName.DataSource = dt;
-            //DropDownName.ValueMember = dt.Columns[0].ColumnName;
+            DropDownName.ValueMember = dt.Columns[0].ColumnName;
             DropDownName.DisplayMember = dt.Columns[1].ColumnName;
         }
 
@@ -86,28 +86,10 @@ namespace CuaHangMayTinh.Controllers
             return list; 
         }
 
-        public List<Category> GetCategoryByID()
-        {
-            List<Category> list = new List<Category>();
-
-            string script = @"EXEC usp_GetDanhMucByID @MaDanhMuc ";
-
-            DataTable dt = DataProvider.Instance.ExecuteQuery(script);
-
-            foreach (DataRow item in dt.Rows)
-            {
-                Category category = new Category(item);
-
-                list.Add(category);
-            }
-            return list;
-        }
-
         public void LoadCategory(DataGridView dataGridViewName)
         {
             string script = @"EXEC usp_GetDanhMuc";
             dataGridViewName.DataSource = DataProvider.Instance.ExecuteQuery(script);
         }
-
     }
 }

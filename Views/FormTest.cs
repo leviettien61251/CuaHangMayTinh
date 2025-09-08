@@ -21,8 +21,6 @@ namespace CuaHangMayTinh.Views
             InitializeComponent();
         }
 
-        int _maDanhMuc, _maNCC;
-
 
         #region Method
         public void LoadData()
@@ -30,9 +28,7 @@ namespace CuaHangMayTinh.Views
             LoadProduct();
             LoadCategory();
             loadComboboxCategory();
-            loadComboboxSupplier();
         }
-
 
         public void LoadProduct()
         {
@@ -51,45 +47,14 @@ namespace CuaHangMayTinh.Views
             listCategories = CategoryController.Instance.GetCategory();
 
             comboBoxCategory.DataSource = listCategories;
-
             comboBoxCategory.DisplayMember = "Name";
+
 
             //CategoryController.Instance.FillCategoryComboBox(script, comboBoxLoaiSP); old
         }
 
-        private void loadComboboxSupplier()
-        {
-            List<Supplier> listSupplier = new List<Supplier>();
-
-            listSupplier = SupplierController.Instance.GetSupplier();
-
-            comboBoxMaNCC.DataSource = listSupplier;
-
-            comboBoxMaNCC.DisplayMember = "Name";
-
-        }
-
-        private void loadComboboxCategoryByID()
-        {
-            List<Category> listCategories = new List<Category>();
-
-            listCategories = CategoryController.Instance.GetCategory();
-
-            comboBoxCategory.DataSource = listCategories;
-
-            comboBoxCategory.DisplayMember = "Name";
-
-            //CategoryController.Instance.FillCategoryComboBox(script, comboBoxLoaiSP); 
-        }
-
         private void FormTest_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'cuaHangMayTinhDataSet2.NhaCungCap' table. You can move, or remove it, as needed.
-            this.nhaCungCapTableAdapter1.Fill(this.cuaHangMayTinhDataSet2.NhaCungCap);
-            // TODO: This line of code loads data into the 'cuaHangMayTinhDataSet1.NhaCungCap' table. You can move, or remove it, as needed.
-            this.nhaCungCapTableAdapter.Fill(this.cuaHangMayTinhDataSet1.NhaCungCap);
-            // TODO: This line of code loads data into the 'cuaHangMayTinhDataSet.DanhMuc' table. You can move, or remove it, as needed.
-            this.danhMucTableAdapter.Fill(this.cuaHangMayTinhDataSet.DanhMuc);
             LoadData();
         }
 
@@ -100,88 +65,23 @@ namespace CuaHangMayTinh.Views
         private void buttonAdd_Click(object sender, EventArgs e)
         {
 
-            string TenSP = textBoxTenSP.Text;
-
-            int MaDanhMuc = _maDanhMuc;
-
-            int MaNCC = _maNCC;
-
-            string MoTa = "";
-
-            int BaoHanh = 36;
-
-            float GiaNhap = (float)double.Parse(textBoxGiaNhap.Text);
-
-            float GiaBan = (float)double.Parse(textBoxGiaBan.Text);
-
-            int SoLuongTon = (int)double.Parse(textBoxSoLuong.Text);
-
-            bool result = ProductController.Instance.AddProduct(TenSP, MaDanhMuc, MaNCC, MoTa, BaoHanh, GiaNhap, GiaBan, SoLuongTon);
-
-            if (result) 
-            {
-                MessageBox.Show("Thêm mới sản phẩm thành công!");
-                ClearTextBox();
-                LoadProduct();
-            }
-            else
-            {
-                MessageBox.Show("Thêm mới sản phẩm không thành công!");
-            }
         }
 
         private void buttonChange_Click(object sender, EventArgs e)
         {
-            string TenSP = textBoxTenSP.Text;
 
-            int MaDanhMuc = _maDanhMuc;
-
-            int MaNCC = _maNCC;
-
-            string MoTa = "";
-
-            int BaoHanh = 36;
-
-            float GiaNhap = (float)double.Parse(textBoxGiaNhap.Text);
-
-            float GiaBan = (float)double.Parse(textBoxGiaBan.Text);
-
-            int SoLuongTon = (int)double.Parse(textBoxSoLuong.Text);
-
-            bool result = ProductController.Instance.AddProduct(TenSP, MaDanhMuc, MaNCC, MoTa, BaoHanh, GiaNhap, GiaBan, SoLuongTon);
-
-            if (result)
-            {
-                MessageBox.Show("Lưu sản phẩm thành công!");
-                ClearTextBox();
-                LoadProduct();
-            }
-            else
-            {
-                MessageBox.Show("Lưu sản phẩm không thành công!");
-            }
         }
 
         private void buttonDel_Click(object sender, EventArgs e)
         {
-            string maSP = textBoxMaSP.Text;
-            ProductController.Instance.RemoveProduct(maSP);
-            LoadProduct();
+
         }
 
-        private void ClearTextBox()
-        {
-            textBoxMaSP.Clear();
-            textBoxTenSP.Clear();
-            textBoxNCC.Clear();
-            textBoxGiaBan.Clear();
-            textBoxGiaNhap.Clear();
-            textBoxSoLuong.Clear();
-        }
+        #endregion
 
         private void comboBoxLoaiSP_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            int _maDanhMuc;
 
             ComboBox cb = sender as ComboBox;
 
@@ -191,7 +91,10 @@ namespace CuaHangMayTinh.Views
                 return;
             }
 
+
+
             Category selected = cb.SelectedItem as Category;
+            //selected.MaDanhMuc
 
             if (selected != null)
             {
@@ -203,48 +106,9 @@ namespace CuaHangMayTinh.Views
                 labelCheckIDCategory.Text = "ID: ko lấy được";
             }
 
-        }
 
-        private void dataGridViewProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
 
-        private void dataGridViewProduct_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //loadComboboxCategory();
-            textBoxMaSP.Text = dataGridViewProduct.CurrentRow.Cells[0].Value.ToString();
-            textBoxTenSP.Text = dataGridViewProduct.CurrentRow.Cells[1].Value.ToString();
-            comboBoxCategory.Text = dataGridViewProduct.CurrentRow.Cells[2].Value.ToString();
-            textBoxNCC.Text = dataGridViewProduct.CurrentRow.Cells[3].Value.ToString();
-            textBoxGiaNhap.Text = dataGridViewProduct.CurrentRow.Cells[6].Value.ToString();
-            textBoxGiaBan.Text = dataGridViewProduct.CurrentRow.Cells[7].Value.ToString();
-            textBoxSoLuong.Text = dataGridViewProduct.CurrentRow.Cells[8].Value.ToString();
-        }
-
-        #endregion
-
-        private void comboBoxMaNCC_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ComboBox cb = sender as ComboBox;
-
-            if (cb.SelectedItem == null)
-            {
-                labelCheckIDNCC.Text = "ID: ko lấy đượcssss";
-                return;
-            }
-
-            Supplier selected = cb.SelectedItem as Supplier;
-
-            if (selected != null)
-            {
-                _maNCC = selected.MaNCC;
-                labelCheckIDNCC.Text = "ID: " + _maNCC.ToString();
-            }
-            else
-            {
-                labelCheckIDNCC.Text = "ID: ko lấy được";
-            }
         }
     }
 }
