@@ -241,6 +241,24 @@
     <Compile Include="Views\Manager\frmSupplierManagement.Designer.cs">
       <DependentUpon>frmSupplierManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Report\frmBestSellersReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Report\frmBestSellersReport.Designer.cs">
+      <DependentUpon>frmBestSellersReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Report\frmInventoryReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Report\frmInventoryReport.Designer.cs">
+      <DependentUpon>frmInventoryReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Report\frmRevenueReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Report\frmRevenueReport.Designer.cs">
+      <DependentUpon>frmRevenueReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Test.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -274,6 +292,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Manager\frmSupplierManagement.resx">
       <DependentUpon>frmSupplierManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Report\frmBestSellersReport.resx">
+      <DependentUpon>frmBestSellersReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Report\frmInventoryReport.resx">
+      <DependentUpon>frmInventoryReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Report\frmRevenueReport.resx">
+      <DependentUpon>frmRevenueReport.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="CuaHangMayTinhDataSet.xsc">
       <DependentUpon>CuaHangMayTinhDataSet.xsd</DependentUpon>
