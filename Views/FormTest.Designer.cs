@@ -28,15 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridViewProduct = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridViewCategory = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.labelCheckIDNCC = new System.Windows.Forms.Label();
+            this.labelCheckIDCategory = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.comboBoxMaNCC = new System.Windows.Forms.ComboBox();
+            this.nhaCungCapBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cuaHangMayTinhDataSet1 = new CuaHangMayTinh.CuaHangMayTinhDataSet1();
             this.textBoxSoLuong = new System.Windows.Forms.TextBox();
             this.textBoxGiaBan = new System.Windows.Forms.TextBox();
             this.textBoxGiaNhap = new System.Windows.Forms.TextBox();
-            this.textBoxNCC = new System.Windows.Forms.TextBox();
             this.textBoxTenSP = new System.Windows.Forms.TextBox();
             this.labelMaSP = new System.Windows.Forms.Label();
             this.labelSoLuong = new System.Windows.Forms.Label();
@@ -47,15 +52,22 @@
             this.labelLoaiSP = new System.Windows.Forms.Label();
             this.textBoxMaSP = new System.Windows.Forms.TextBox();
             this.comboBoxCategory = new System.Windows.Forms.ComboBox();
+            this.danhMucBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cuaHangMayTinhDataSet = new CuaHangMayTinh.CuaHangMayTinhDataSet();
             this.buttonDel = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonChange = new System.Windows.Forms.Button();
-            this.labelCheckIDCategory = new System.Windows.Forms.Label();
+            this.danhMucTableAdapter = new CuaHangMayTinh.CuaHangMayTinhDataSetTableAdapters.DanhMucTableAdapter();
+            this.nhaCungCapTableAdapter = new CuaHangMayTinh.CuaHangMayTinhDataSet1TableAdapters.NhaCungCapTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCategory)).BeginInit();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nhaCungCapBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayTinhDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.danhMucBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayTinhDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewProduct
@@ -68,6 +80,8 @@
             this.dataGridViewProduct.ReadOnly = true;
             this.dataGridViewProduct.Size = new System.Drawing.Size(432, 208);
             this.dataGridViewProduct.TabIndex = 0;
+            this.dataGridViewProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProduct_CellClick);
+            this.dataGridViewProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProduct_CellContentClick);
             // 
             // panel1
             // 
@@ -93,6 +107,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.labelCheckIDNCC);
             this.panel2.Controls.Add(this.labelCheckIDCategory);
             this.panel2.Controls.Add(this.tableLayoutPanel1);
             this.panel2.Controls.Add(this.buttonDel);
@@ -103,15 +118,33 @@
             this.panel2.Size = new System.Drawing.Size(347, 426);
             this.panel2.TabIndex = 4;
             // 
+            // labelCheckIDNCC
+            // 
+            this.labelCheckIDNCC.AutoSize = true;
+            this.labelCheckIDNCC.Location = new System.Drawing.Point(175, 403);
+            this.labelCheckIDNCC.Name = "labelCheckIDNCC";
+            this.labelCheckIDNCC.Size = new System.Drawing.Size(50, 13);
+            this.labelCheckIDNCC.TabIndex = 5;
+            this.labelCheckIDNCC.Text = "Mã NCC:";
+            // 
+            // labelCheckIDCategory
+            // 
+            this.labelCheckIDCategory.AutoSize = true;
+            this.labelCheckIDCategory.Location = new System.Drawing.Point(175, 374);
+            this.labelCheckIDCategory.Name = "labelCheckIDCategory";
+            this.labelCheckIDCategory.Size = new System.Drawing.Size(75, 13);
+            this.labelCheckIDCategory.TabIndex = 4;
+            this.labelCheckIDCategory.Text = "Mã danh mục:";
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.39535F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.60465F));
+            this.tableLayoutPanel1.Controls.Add(this.comboBoxMaNCC, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.textBoxSoLuong, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.textBoxGiaBan, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.textBoxGiaNhap, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxNCC, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.textBoxTenSP, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.labelMaSP, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.labelSoLuong, 0, 6);
@@ -136,6 +169,28 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(344, 356);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
+            // comboBoxMaNCC
+            // 
+            this.comboBoxMaNCC.DataSource = this.nhaCungCapBindingSource;
+            this.comboBoxMaNCC.DisplayMember = "TenNCC";
+            this.comboBoxMaNCC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBoxMaNCC.FormattingEnabled = true;
+            this.comboBoxMaNCC.Location = new System.Drawing.Point(111, 153);
+            this.comboBoxMaNCC.Name = "comboBoxMaNCC";
+            this.comboBoxMaNCC.Size = new System.Drawing.Size(230, 21);
+            this.comboBoxMaNCC.TabIndex = 15;
+            this.comboBoxMaNCC.SelectedIndexChanged += new System.EventHandler(this.comboBoxMaNCC_SelectedIndexChanged);
+            // 
+            // nhaCungCapBindingSource
+            // 
+            this.nhaCungCapBindingSource.DataMember = "NhaCungCap";
+            this.nhaCungCapBindingSource.DataSource = this.cuaHangMayTinhDataSet1;
+            // 
+            // cuaHangMayTinhDataSet1
+            // 
+            this.cuaHangMayTinhDataSet1.DataSetName = "CuaHangMayTinhDataSet1";
+            this.cuaHangMayTinhDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // textBoxSoLuong
             // 
             this.textBoxSoLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
@@ -159,14 +214,6 @@
             this.textBoxGiaNhap.Name = "textBoxGiaNhap";
             this.textBoxGiaNhap.Size = new System.Drawing.Size(230, 23);
             this.textBoxGiaNhap.TabIndex = 11;
-            // 
-            // textBoxNCC
-            // 
-            this.textBoxNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.textBoxNCC.Location = new System.Drawing.Point(111, 153);
-            this.textBoxNCC.Name = "textBoxNCC";
-            this.textBoxNCC.Size = new System.Drawing.Size(230, 23);
-            this.textBoxNCC.TabIndex = 10;
             // 
             // textBoxTenSP
             // 
@@ -271,6 +318,8 @@
             // 
             // comboBoxCategory
             // 
+            this.comboBoxCategory.DataSource = this.danhMucBindingSource;
+            this.comboBoxCategory.DisplayMember = "TenDanhMuc";
             this.comboBoxCategory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBoxCategory.FormattingEnabled = true;
             this.comboBoxCategory.Location = new System.Drawing.Point(111, 103);
@@ -278,6 +327,16 @@
             this.comboBoxCategory.Size = new System.Drawing.Size(230, 21);
             this.comboBoxCategory.TabIndex = 14;
             this.comboBoxCategory.SelectedIndexChanged += new System.EventHandler(this.comboBoxLoaiSP_SelectedIndexChanged);
+            // 
+            // danhMucBindingSource
+            // 
+            this.danhMucBindingSource.DataMember = "DanhMuc";
+            this.danhMucBindingSource.DataSource = this.cuaHangMayTinhDataSet;
+            // 
+            // cuaHangMayTinhDataSet
+            // 
+            this.cuaHangMayTinhDataSet.DataSetName = "CuaHangMayTinhDataSet";
+            this.cuaHangMayTinhDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // buttonDel
             // 
@@ -312,14 +371,13 @@
             this.buttonChange.UseVisualStyleBackColor = true;
             this.buttonChange.Click += new System.EventHandler(this.buttonChange_Click);
             // 
-            // labelCheckIDCategory
+            // danhMucTableAdapter
             // 
-            this.labelCheckIDCategory.AutoSize = true;
-            this.labelCheckIDCategory.Location = new System.Drawing.Point(184, 394);
-            this.labelCheckIDCategory.Name = "labelCheckIDCategory";
-            this.labelCheckIDCategory.Size = new System.Drawing.Size(75, 13);
-            this.labelCheckIDCategory.TabIndex = 4;
-            this.labelCheckIDCategory.Text = "Mã danh mục:";
+            this.danhMucTableAdapter.ClearBeforeFill = true;
+            // 
+            // nhaCungCapTableAdapter
+            // 
+            this.nhaCungCapTableAdapter.ClearBeforeFill = true;
             // 
             // FormTest
             // 
@@ -337,6 +395,10 @@
             this.panel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nhaCungCapBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayTinhDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.danhMucBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayTinhDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -360,11 +422,18 @@
         private System.Windows.Forms.TextBox textBoxSoLuong;
         private System.Windows.Forms.TextBox textBoxGiaBan;
         private System.Windows.Forms.TextBox textBoxGiaNhap;
-        private System.Windows.Forms.TextBox textBoxNCC;
         private System.Windows.Forms.TextBox textBoxTenSP;
         private System.Windows.Forms.TextBox textBoxMaSP;
         private System.Windows.Forms.ComboBox comboBoxCategory;
         private System.Windows.Forms.DataGridView dataGridViewCategory;
         private System.Windows.Forms.Label labelCheckIDCategory;
+        private System.Windows.Forms.ComboBox comboBoxMaNCC;
+        private System.Windows.Forms.Label labelCheckIDNCC;
+        private CuaHangMayTinhDataSet cuaHangMayTinhDataSet;
+        private System.Windows.Forms.BindingSource danhMucBindingSource;
+        private CuaHangMayTinhDataSetTableAdapters.DanhMucTableAdapter danhMucTableAdapter;
+        private CuaHangMayTinhDataSet1 cuaHangMayTinhDataSet1;
+        private System.Windows.Forms.BindingSource nhaCungCapBindingSource;
+        private CuaHangMayTinhDataSet1TableAdapters.NhaCungCapTableAdapter nhaCungCapTableAdapter;
     }
 }

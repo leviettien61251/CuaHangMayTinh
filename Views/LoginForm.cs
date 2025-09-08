@@ -1,4 +1,8 @@
-﻿using System;
+﻿using ComputerStoreManagement;
+using CuaHangMayTinh.Models;
+using Microsoft.Data.SqlClient;
+using Microsoft.IdentityModel.Tokens;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,9 +12,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CuaHangMayTinh.Models;
-using Microsoft.Data.SqlClient;
-using Microsoft.IdentityModel.Tokens;
 
 namespace CuaHangMayTinh.Views
 {
@@ -54,10 +55,11 @@ namespace CuaHangMayTinh.Views
                 {
                     if (checkLogin(username, password))
                     {
-                        FormTest F_Test = new FormTest();
+                        MainForm F_main = new MainForm();
+                        //FormTest F_main = new FormTest();
                         //MessageBox.Show("Đăng nhập thành công!");
                         this.Hide(); //ẩn form đăng nhập
-                        F_Test.ShowDialog();
+                        F_main.ShowDialog();
                         this.Show();
                     }
                     else
