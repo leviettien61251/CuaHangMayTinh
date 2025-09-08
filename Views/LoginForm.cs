@@ -6,8 +6,10 @@ using System.Drawing;
 using System.IdentityModel.Selectors;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ComputerStoreManagement;
 using CuaHangMayTinh.Models;
 using Microsoft.Data.SqlClient;
 using Microsoft.IdentityModel.Tokens;
@@ -42,10 +44,17 @@ namespace CuaHangMayTinh.Views
 
             try
             {
+                Regex regex = new Regex("^[^0-9\\s]+$");
                 var username = textBoxUsername.Text;//lấy username từ textbox
                 var password = textBoxPassword.Text;//lấy password từ textbox
 
-                if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+
+                if (!regex.IsMatch(username))
+                {
+                    MessageBox.Show("Không được chứa ký tự đặc biệt!");
+                    return;
+                }
+                else if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
                 {
                     MessageBox.Show("Hãy nhập đầy đủ thông tin!");
                     return;
@@ -54,10 +63,10 @@ namespace CuaHangMayTinh.Views
                 {
                     if (checkLogin(username, password))
                     {
-                        FormTest F_Test = new FormTest();
+                        MainForm mainForm = new MainForm();
                         //MessageBox.Show("Đăng nhập thành công!");
                         this.Hide(); //ẩn form đăng nhập
-                        F_Test.ShowDialog();
+                        mainForm.ShowDialog();
                         this.Show();
                     }
                     else

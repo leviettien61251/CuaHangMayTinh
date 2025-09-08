@@ -33,8 +33,6 @@ namespace CuaHangMayTinh.Controllers
 
         private ProductController() {}
 
-        
-
         public List<Product> GetProduct()
         {
             string script = @"EXEC usp_GetSanPham";
@@ -57,10 +55,35 @@ namespace CuaHangMayTinh.Controllers
             dataGridViewName.DataSource = DataProvider.Instance.ExecuteQuery(script);
         }
 
-        public void AddProduct()
+        public void LoadCLickedProduct()
         {
 
         }
-        
+
+        public bool AddProduct(string TenSP, int MaDanhMuc, int MaNCC, string MoTa, int BaoHanh, float GiaNhap, float GiaBan, int SoLuongTon)
+        {
+            string script = @"EXEC usp_AddSanPhamTest @TenSP , @MaDanhMuc , @MaNCC , @MoTa , @BaoHanh , @GiaNhap , @GiaBan , @SoLuongTon ";
+
+            int result = DataProvider.Instance.ExecuteNonQuery(script, new object[] {TenSP, MaDanhMuc, MaNCC, MoTa, BaoHanh, GiaNhap, GiaBan, SoLuongTon});
+
+            return result == 1;
+        }
+
+        public bool UpdateProduct(string TenSP, int MaDanhMuc, int MaNCC, string MoTa, int BaoHanh, float GiaNhap, float GiaBan, int SoLuongTon)
+        {
+            string script = @"EXEC usp_UpdateSanPhamTest @TenSP , @MaDanhMuc , @MaNCC , @MoTa , @BaoHanh , @GiaNhap , @GiaBan , @SoLuongTon ";
+
+            int result = DataProvider.Instance.ExecuteNonQuery(script, new object[] { TenSP, MaDanhMuc, MaNCC, MoTa, BaoHanh, GiaNhap, GiaBan, SoLuongTon });
+
+            return result == 1;
+        }
+
+        public void RemoveProduct(string MaSP) 
+        {
+            string script = @"EXEC usp_DelSanPhamByID @MaSP";
+
+            DataProvider.Instance.ExecuteNonQuery(script, new object[] {MaSP});
+
+        }
     }
 }
