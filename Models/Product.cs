@@ -12,7 +12,7 @@ namespace CuaHangMayTinh.Models
         public Product() { }
 
         public Product(
-            string maSP,
+            int maSP,
             string tenSP,
             int maDanhMuc,
             int maNCC,
@@ -49,7 +49,7 @@ namespace CuaHangMayTinh.Models
 
         public Product(DataRow row)
         {
-            this._maSP = row["MaSP"].ToString();
+            this._maSP = (int)row["MaSP"];
 
             this._tenSP = row["TenSP"].ToString();
 
@@ -72,7 +72,27 @@ namespace CuaHangMayTinh.Models
             this._ngayTao = row["ngayTao"].ToString();
         }
 
-        private string _maSP;
+        public Product(string tenSP, int maDanhMuc, int maNCC, string moTa, int baoHanh, float giaNhap, float giaBan, int soLuongTon)
+        {
+            _tenSP = tenSP;
+
+            _maDanhMuc = maDanhMuc;
+
+            _maNCC = maNCC;
+
+            _moTa = moTa;
+
+            _baoHanh = baoHanh;
+
+            _giaNhap = giaNhap;
+
+            _giaBan = giaBan;
+
+            _soLuongTon = soLuongTon;
+
+        }
+
+        private int _maSP;
 
         private string _tenSP;
 
@@ -94,7 +114,7 @@ namespace CuaHangMayTinh.Models
 
         private string _ngayTao;
 
-        public string MaSP { get => _maSP; private set => _maSP = value; }
+        public int MaSP { get => _maSP; private set => _maSP = value; }
 
         public string TenSP { get => _tenSP; private set => _tenSP = value; }
 

@@ -10,32 +10,33 @@ using System.Windows.Forms;
 
 namespace CuaHangMayTinh.Controllers
 {
-    public class CategoryController
+    public class SupplierController
     {
-        private static CategoryController instance;
+        private static SupplierController instance;
 
-        public static CategoryController Instance
+        private string connectionString = @"Data Source=TIENLV;Initial Catalog=CuaHangMayTinh;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+
+        public static SupplierController Instance
         {
             get
             {
                 if (instance == null)
                 {
-                    instance = new CategoryController();
+                    instance = new SupplierController();
                 }
                 return instance;
             }
 
             private set
             {
-                CategoryController.instance = value;
+                instance = value;
             }
+
         }
 
-        private CategoryController() { }
+        private SupplierController() { }
 
-        private string connectionString = @"Data Source=TIENLV;Initial Catalog=CuaHangMayTinh;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
-
-        public void FillCategoryComboBox(string script, ComboBox DropDownName)
+        public void FillSupplierComboBox(string script, ComboBox DropDownName)
         {
             // If you use a DataTable (or any object which implmenets IEnumerable)
             // you can bind the results of your query directly as the 
@@ -68,46 +69,22 @@ namespace CuaHangMayTinh.Controllers
             DropDownName.DisplayMember = dt.Columns[1].ColumnName;
         }
 
-        public List<Category> GetCategory()
+        public List<Supplier> GetSupplier()
         {
-            
-            List<Category> list = new List<Category>();
 
-            string script = @"EXEC usp_GetDanhMuc";
+            List<Supplier> list = new List<Supplier>();
+
+            string script = @"EXEC usp_GetNhaCungCap";
 
             DataTable dt = DataProvider.Instance.ExecuteQuery(script);
 
             foreach (DataRow item in dt.Rows)
             {
-                Category category = new Category(item);
+                Supplier supplier = new Supplier(item);
 
-                list.Add(category);
-            }
-            return list; 
-        }
-
-        public List<Category> GetCategoryByID()
-        {
-            List<Category> list = new List<Category>();
-
-            string script = @"EXEC usp_GetDanhMucByID @MaDanhMuc ";
-
-            DataTable dt = DataProvider.Instance.ExecuteQuery(script);
-
-            foreach (DataRow item in dt.Rows)
-            {
-                Category category = new Category(item);
-
-                list.Add(category);
+                list.Add(supplier);
             }
             return list;
         }
-
-        public void LoadCategory(DataGridView dataGridViewName)
-        {
-            string script = @"EXEC usp_GetDanhMuc";
-            dataGridViewName.DataSource = DataProvider.Instance.ExecuteQuery(script);
-        }
-
     }
 }
