@@ -188,6 +188,7 @@
     </Compile>
     <Compile Include="Models\Class1.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Supplier.cs" />
     <Compile Include="Program.cs" />
