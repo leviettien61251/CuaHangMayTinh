@@ -29,7 +29,7 @@ namespace CuaHangMayTinh.Views
             LoadProduct();
         }
 
-        public void LoadProduct()
+        private void LoadProduct()
         {
             loadComboboxCategory();
             loadComboboxSupplier();
