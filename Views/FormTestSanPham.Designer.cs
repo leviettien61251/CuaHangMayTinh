@@ -28,19 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabProducts = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.grbProductInfo = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.cbSupplier = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtProductId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cbCategory = new System.Windows.Forms.ComboBox();
+            this.danhMucBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cuaHangMayTinhDataSet2 = new CuaHangMayTinh.CuaHangMayTinhDataSet2();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtManufacturer = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtImportPrice = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -104,6 +107,9 @@
             this.dgvRevenue = new System.Windows.Forms.DataGridView();
             this.tabBestSellers = new System.Windows.Forms.TabPage();
             this.dgvBestSellers = new System.Windows.Forms.DataGridView();
+            this.danhMucTableAdapter = new CuaHangMayTinh.CuaHangMayTinhDataSet2TableAdapters.DanhMucTableAdapter();
+            this.labelCHeckID = new System.Windows.Forms.Label();
+            this.labelNCC = new System.Windows.Forms.Label();
             this.tabControlMain.SuspendLayout();
             this.tabProducts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -112,6 +118,8 @@
             this.splitContainer1.SuspendLayout();
             this.grbProductInfo.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.danhMucBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayTinhDataSet2)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.grbProductList.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -199,6 +207,7 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel1.Controls.Add(this.cbSupplier, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtProductId, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
@@ -206,7 +215,6 @@
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.cbCategory, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.txtManufacturer, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.txtImportPrice, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 5);
@@ -214,6 +222,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label7, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.txtStockQuantity, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.labelCHeckID, 1, 7);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -228,6 +237,17 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(340, 614);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // cbSupplier
+            // 
+            this.cbSupplier.DisplayMember = "TenNCC";
+            this.cbSupplier.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbSupplier.FormattingEnabled = true;
+            this.cbSupplier.Location = new System.Drawing.Point(105, 231);
+            this.cbSupplier.Name = "cbSupplier";
+            this.cbSupplier.Size = new System.Drawing.Size(232, 21);
+            this.cbSupplier.TabIndex = 16;
+            this.cbSupplier.SelectedIndexChanged += new System.EventHandler(this.comboBoxMaNCC_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -277,18 +297,25 @@
             // 
             // cbCategory
             // 
+            this.cbCategory.DataSource = this.danhMucBindingSource;
+            this.cbCategory.DisplayMember = "TenDanhMuc";
             this.cbCategory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Items.AddRange(new object[] {
-            "Laptop",
-            "PC Desktop",
-            "Màn hình",
-            "Linh kiện",
-            "Phụ kiện"});
             this.cbCategory.Location = new System.Drawing.Point(105, 155);
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.Size = new System.Drawing.Size(232, 21);
             this.cbCategory.TabIndex = 5;
+            this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.comboBoxLoaiSP_SelectedIndexChanged);
+            // 
+            // danhMucBindingSource
+            // 
+            this.danhMucBindingSource.DataMember = "DanhMuc";
+            this.danhMucBindingSource.DataSource = this.cuaHangMayTinhDataSet2;
+            // 
+            // cuaHangMayTinhDataSet2
+            // 
+            this.cuaHangMayTinhDataSet2.DataSetName = "CuaHangMayTinhDataSet2";
+            this.cuaHangMayTinhDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label4
             // 
@@ -299,14 +326,6 @@
             this.label4.Size = new System.Drawing.Size(79, 13);
             this.label4.TabIndex = 6;
             this.label4.Text = "Hãng sản xuất:";
-            // 
-            // txtManufacturer
-            // 
-            this.txtManufacturer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtManufacturer.Location = new System.Drawing.Point(105, 231);
-            this.txtManufacturer.Name = "txtManufacturer";
-            this.txtManufacturer.Size = new System.Drawing.Size(232, 20);
-            this.txtManufacturer.TabIndex = 7;
             // 
             // label5
             // 
@@ -381,6 +400,7 @@
             this.btnAddNew.TabIndex = 0;
             this.btnAddNew.Text = "Thêm mới";
             this.btnAddNew.UseVisualStyleBackColor = true;
+            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
             // btnSave
             // 
@@ -390,6 +410,7 @@
             this.btnSave.TabIndex = 1;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDelete
             // 
@@ -430,6 +451,7 @@
             // 
             this.flowLayoutPanel2.Controls.Add(this.txtSearchProduct);
             this.flowLayoutPanel2.Controls.Add(this.btnSearch);
+            this.flowLayoutPanel2.Controls.Add(this.labelNCC);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
@@ -451,6 +473,7 @@
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // dgvProducts
             // 
@@ -461,6 +484,7 @@
             this.dgvProducts.ReadOnly = true;
             this.dgvProducts.Size = new System.Drawing.Size(795, 568);
             this.dgvProducts.TabIndex = 1;
+            this.dgvProducts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProduct_CellClick);
             // 
             // tabSales
             // 
@@ -964,7 +988,7 @@
             this.tabBestSellers.Location = new System.Drawing.Point(4, 22);
             this.tabBestSellers.Name = "tabBestSellers";
             this.tabBestSellers.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBestSellers.Size = new System.Drawing.Size(1156, 439);
+            this.tabBestSellers.Size = new System.Drawing.Size(1143, 531);
             this.tabBestSellers.TabIndex = 1;
             this.tabBestSellers.Text = "Sản phẩm bán chạy";
             this.tabBestSellers.UseVisualStyleBackColor = true;
@@ -976,8 +1000,30 @@
             this.dgvBestSellers.Location = new System.Drawing.Point(3, 3);
             this.dgvBestSellers.Name = "dgvBestSellers";
             this.dgvBestSellers.ReadOnly = true;
-            this.dgvBestSellers.Size = new System.Drawing.Size(1150, 433);
+            this.dgvBestSellers.Size = new System.Drawing.Size(1137, 525);
             this.dgvBestSellers.TabIndex = 0;
+            // 
+            // danhMucTableAdapter
+            // 
+            this.danhMucTableAdapter.ClearBeforeFill = true;
+            // 
+            // labelCHeckID
+            // 
+            this.labelCHeckID.AutoSize = true;
+            this.labelCHeckID.Location = new System.Drawing.Point(105, 532);
+            this.labelCHeckID.Name = "labelCHeckID";
+            this.labelCHeckID.Size = new System.Drawing.Size(24, 13);
+            this.labelCHeckID.TabIndex = 17;
+            this.labelCHeckID.Text = "ID: ";
+            // 
+            // labelNCC
+            // 
+            this.labelNCC.AutoSize = true;
+            this.labelNCC.Location = new System.Drawing.Point(295, 0);
+            this.labelNCC.Name = "labelNCC";
+            this.labelNCC.Size = new System.Drawing.Size(35, 13);
+            this.labelNCC.TabIndex = 2;
+            this.labelNCC.Text = "NCC: ";
             // 
             // FormTestSanPham
             // 
@@ -987,6 +1033,7 @@
             this.Controls.Add(this.tabControlMain);
             this.Name = "FormTestSanPham";
             this.Text = "FormTestSanPham";
+            this.Load += new System.EventHandler(this.FormTestSanPham_Load);
             this.tabControlMain.ResumeLayout(false);
             this.tabProducts.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -996,6 +1043,8 @@
             this.grbProductInfo.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.danhMucBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayTinhDataSet2)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.grbProductList.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -1047,7 +1096,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbCategory;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtManufacturer;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtImportPrice;
         private System.Windows.Forms.Label label6;
@@ -1111,5 +1159,11 @@
         private System.Windows.Forms.DataGridView dgvRevenue;
         private System.Windows.Forms.TabPage tabBestSellers;
         private System.Windows.Forms.DataGridView dgvBestSellers;
+        private System.Windows.Forms.ComboBox cbSupplier;
+        private CuaHangMayTinhDataSet2 cuaHangMayTinhDataSet2;
+        private System.Windows.Forms.BindingSource danhMucBindingSource;
+        private CuaHangMayTinhDataSet2TableAdapters.DanhMucTableAdapter danhMucTableAdapter;
+        private System.Windows.Forms.Label labelCHeckID;
+        private System.Windows.Forms.Label labelNCC;
     }
 }
