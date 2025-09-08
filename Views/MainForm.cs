@@ -1,5 +1,7 @@
 ﻿using CuaHangMayTinh.Views;
 using CuaHangMayTinh.Views.Manager;
+using CuaHangMayTinh.Views.Report;
+using CuaHangMayTinh.Views.Sale;
 using System;
 using System.Windows.Forms;
 
@@ -32,9 +34,13 @@ namespace ComputerStoreManagement
                     FormTest F_Test = new FormTest();
                     form = F_Test;
                     break;
-                case "frmCustomerManagement":
+                case "Customer":
                     frmCustomerManagement F_CusManage = new frmCustomerManagement();
                     form = F_CusManage;
+                    break;
+                case "FormTestSanPham":
+                    FormTestSanPham F_TestSP = new FormTestSanPham();
+                    form = F_TestSP;
                     break;
                 default:
                     break;
@@ -45,15 +51,74 @@ namespace ComputerStoreManagement
             form.BringToFront();
         }
 
-        private void quảnLýToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void Management_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
             Form form = new Form();
             switch (e.ClickedItem.Name)
             {
-                case "SanPham":
+                case "Product":
                     FormTestSanPham F_Test = new FormTestSanPham();
                     form = F_Test;
-                    //F_Test.Show();
+                    break;
+                case "Customer":
+                    frmCustomerManagement F_CustomerManagement = new frmCustomerManagement();
+                    form = F_CustomerManagement;
+                    break;
+                case "Employee":
+                    frmEmployeeManagement F_EmployeeManagement = new frmEmployeeManagement();
+                    form = F_EmployeeManagement;
+                    break;
+                case "Supplier":
+                    frmSupplierManagement F_SupplierManagement = new frmSupplierManagement();
+                    form = F_SupplierManagement;
+                    break;
+                default:
+                    break;
+            }
+            form.MdiParent = this;
+            form.WindowState = FormWindowState.Maximized;
+            form.Show();
+            form.BringToFront();
+        }
+
+        private void Sale_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            Form form = new Form();
+            switch (e.ClickedItem.Name)
+            {
+                case "Invoice":
+                    frmCreateInvoice F_CreateInvoice = new frmCreateInvoice();
+                    form = F_CreateInvoice;
+                    break;
+                case "InvoiceHistory":
+                    frmInvoiceHistory F_InvoiceHistory = new frmInvoiceHistory();
+                    form = F_InvoiceHistory;
+                    break;
+                default:
+                    break;
+            }
+            form.MdiParent = this;
+            form.WindowState = FormWindowState.Maximized;
+            form.Show();
+            form.BringToFront();
+        }
+
+        private void Report_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            Form form = new Form();
+            switch (e.ClickedItem.Name)
+            {
+                case "Revenue":
+                    frmRevenueReport F_RevenueReport = new frmRevenueReport();
+                    form = F_RevenueReport;
+                    break;
+                case "Inventory":
+                    frmInventoryReport F_InventoryReport = new frmInventoryReport();
+                    form = F_InventoryReport;
+                    break;
+                case "BestSeller":
+                    frmBestSellersReport F_InvoiceHistory = new frmBestSellersReport();
+                    form = F_InvoiceHistory;
                     break;
                 default:
                     break;
@@ -71,7 +136,9 @@ namespace ComputerStoreManagement
 
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
         }
+
+
     }
 }

@@ -21,5 +21,20 @@ namespace CuaHangMayTinh.Views.Manager
         {
 
         }
+
+        private void btnAddNew_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
