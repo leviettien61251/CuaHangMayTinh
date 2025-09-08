@@ -25,7 +25,7 @@ namespace CuaHangMayTinh.Views
 
 
         #region Method
-        public void LoadData()
+        private void LoadData()
         {
             LoadProduct();
             LoadCategory();
@@ -34,12 +34,12 @@ namespace CuaHangMayTinh.Views
         }
 
 
-        public void LoadProduct()
+        private void LoadProduct()
         {
             ProductController.Instance.LoadProduct(dataGridViewProduct);
         }
 
-        public void LoadCategory()
+        private void LoadCategory()
         {
             CategoryController.Instance.LoadCategory(dataGridViewCategory);
         }

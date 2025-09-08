@@ -35,6 +35,8 @@ namespace CuaHangMayTinh.Controllers
 
         private string connectionString = @"Data Source=TIENLV;Initial Catalog=CuaHangMayTinh;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
 
+        string script = @"";
+
         public void FillCategoryComboBox(string script, ComboBox DropDownName)
         {
             // If you use a DataTable (or any object which implmenets IEnumerable)
@@ -73,7 +75,7 @@ namespace CuaHangMayTinh.Controllers
             
             List<Category> list = new List<Category>();
 
-            string script = @"EXEC usp_GetDanhMuc";
+            script = @"EXEC usp_GetDanhMuc";
 
             DataTable dt = DataProvider.Instance.ExecuteQuery(script);
 
@@ -88,7 +90,7 @@ namespace CuaHangMayTinh.Controllers
 
         public void LoadCategory(DataGridView dataGridViewName)
         {
-            string script = @"EXEC usp_GetDanhMuc";
+            script = @"EXEC usp_GetDanhMuc";
             dataGridViewName.DataSource = DataProvider.Instance.ExecuteQuery(script);
         }
     }
