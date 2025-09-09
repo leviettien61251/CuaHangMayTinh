@@ -1,6 +1,7 @@
 ﻿using CuaHangMayTinh.Controllers;
 using CuaHangMayTinh.Models;
 using Microsoft.Data.SqlClient;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -63,7 +64,6 @@ namespace CuaHangMayTinh.Views.Report
 
             if (cb.SelectedItem == null)
             {
-                labelID.Text = "ID: ko lấy đượcssss";
                 return;
             }
 
@@ -73,37 +73,110 @@ namespace CuaHangMayTinh.Views.Report
             {
                 maDM = selected.MaDanhMuc;
                 titleWb = selected.TenDanhMuc;
-                labelID.Text = "ID: " + maDM.ToString();
-            }
-            else
-            {
-                labelID.Text = "ID: ko lấy được";
             }
         }
 
         private void btnViewReport_Click(object sender, EventArgs e)
         {
-            //int minStock;
-            //int maxStock;
-            //if (txtMinStock.Text == null || txtMaxStock.Text == null)
-            //{
-            //    minStock = 0;
-            //    maxStock = 100000;
-            //}
-            //else
-            //{
-            //    minStock = (int)Convert.ToDouble(txtMinStock.Text.ToString());
-            //    maxStock = (int)Convert.ToDouble(txtMaxStock.Text.ToString());
-            //}
-            // 
+
+            int minStock;
+            int maxStock;
+
+            if (txtMinStock.Text.IsNullOrEmpty() || txtMaxStock.Text.IsNullOrEmpty())
+            {
+                //MessageBox.Show("Hãy điền giới hạn số lượng tồn!!");
+                //return;
+                if (maDM == 16)
+                {
+                    try
+                    {
+                        ProductController.Instance.LoadProduct(dataGridViewProduct);
+                    }
+                    catch (SqlException ex)
+                    {
+                        throw ex;
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        ProductController.Instance.LoadProductByIDCategory(dataGridViewProduct, maDM);
+                    }
+                    catch (SqlException ex)
+                    {
+                        throw ex;
+                    }
+                }
+
+            }
+            else
+            {
+                minStock = (int)Convert.ToDouble(txtMinStock.Text.ToString());
+                maxStock = (int)Convert.ToDouble(txtMaxStock.Text.ToString());
+                if (maDM == 16)
+                {
+                    try
+                    {
+                        ProductController.Instance.LoadProductOnlyStock(dataGridViewProduct, minStock, maxStock);
+                    }
+                    catch (SqlException ex)
+                    {
+                        throw ex;
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        ProductController.Instance.LoadProductByIDCategoryAndStock(dataGridViewProduct, maDM, minStock, maxStock);
+                    }
+                    catch (SqlException ex)
+                    {
+                        throw ex;
+                    }
+                }
+
+            }
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
             try
             {
-                ProductController.Instance.LoadProductByIDCategory(dataGridViewProduct, maDM);
+                ProductController.Instance.LoadProduct(dataGridViewProduct);
             }
             catch (SqlException ex)
             {
                 throw ex;
             }
+        }
+
+        private void buttonSearchAll_Click(object sender, EventArgs e)
+        {
+            int minStock;
+            int maxStock;
+
+            if (txtMinStock.Text.IsNullOrEmpty() || txtMaxStock.Text.IsNullOrEmpty())
+            {
+                MessageBox.Show("Hãy điền giới hạn số lượng tồn!!");
+                return;
+            }
+            else
+            {
+                minStock = (int)Convert.ToDouble(txtMinStock.Text.ToString());
+                maxStock = (int)Convert.ToDouble(txtMaxStock.Text.ToString());
+                try
+                {
+                    ProductController.Instance.LoadProductByIDCategoryAndStock(dataGridViewProduct, maDM, minStock, maxStock);
+                }
+                catch (SqlException ex)
+                {
+                    throw ex;
+                }
+            }
+
+
         }
 
         private void btnExport_Click(object sender, EventArgs e)
