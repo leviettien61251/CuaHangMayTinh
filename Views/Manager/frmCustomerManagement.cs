@@ -30,11 +30,9 @@ namespace CuaHangMayTinh.Views.Manager
             try
             {
                 CustomerController.Instance.LoadCustomer(dgvCustomers);
-
             }
             catch (SqlException ex)
             {
-
                 throw ex;
             }
         }

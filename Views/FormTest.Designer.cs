@@ -33,6 +33,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridViewCategory = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonExcel = new System.Windows.Forms.Button();
             this.labelCheckIDNCC = new System.Windows.Forms.Label();
             this.labelCheckIDCategory = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -107,6 +108,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.buttonExcel);
             this.panel2.Controls.Add(this.labelCheckIDNCC);
             this.panel2.Controls.Add(this.labelCheckIDCategory);
             this.panel2.Controls.Add(this.tableLayoutPanel1);
@@ -117,6 +119,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(347, 426);
             this.panel2.TabIndex = 4;
+            // 
+            // buttonExcel
+            // 
+            this.buttonExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExcel.Location = new System.Drawing.Point(70, 365);
+            this.buttonExcel.Name = "buttonExcel";
+            this.buttonExcel.Size = new System.Drawing.Size(61, 29);
+            this.buttonExcel.TabIndex = 6;
+            this.buttonExcel.Text = "Excel";
+            this.buttonExcel.UseVisualStyleBackColor = true;
+            this.buttonExcel.Click += new System.EventHandler(this.buttonExcel_Click);
             // 
             // labelCheckIDNCC
             // 
@@ -435,5 +448,6 @@
         private CuaHangMayTinhDataSet1 cuaHangMayTinhDataSet1;
         private System.Windows.Forms.BindingSource nhaCungCapBindingSource;
         private CuaHangMayTinhDataSet1TableAdapters.NhaCungCapTableAdapter nhaCungCapTableAdapter;
+        private System.Windows.Forms.Button buttonExcel;
     }
 }
