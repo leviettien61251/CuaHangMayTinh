@@ -1,5 +1,7 @@
-﻿using CuaHangMayTinh.Controllers;
+﻿using ClosedXML.Excel;
+using CuaHangMayTinh.Controllers;
 using CuaHangMayTinh.Models;
+using DocumentFormat.OpenXml.Spreadsheet;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -170,6 +172,57 @@ namespace CuaHangMayTinh.Views
             LoadProduct();
         }
 
+        private void buttonExcel_Click(object sender, EventArgs e)
+        {
+            ExcelController.Instance.SaveExcel(dataGridViewProduct, "Product Report", "Product");
+            //if (dataGridViewProduct.Rows.Count > 0)
+            //{
+            //    using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel Workbook|*.xlsx" })
+            //    {
+            //        if (sfd.ShowDialog() == DialogResult.OK)
+            //        {
+            //            try
+            //            {
+            //                using (XLWorkbook wb = new XLWorkbook())
+            //                {
+            //                    var ws = wb.Worksheets.Add("NhanVien");
+
+            //                    //ws.Cell(1, 1).Value = "ABCDEF";
+            //                    var range = ws.Range(1, 1, 1, dataGridViewProduct.Columns.Count);
+            //                    range.Merge(); 
+            //                    range.Value = "Báo cáo sản phẩm"; 
+            //                    range.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center; 
+            //                    range.Style.Font.Bold = true; 
+            //                    range.Style.Font.FontSize = 16;
+
+            //                    // ghi header
+            //                    for (int i = 0; i < dataGridViewProduct.Columns.Count; i++)
+            //                    {
+
+            //                        ws.Cell(2, i + 1).Value = dataGridViewProduct.Columns[i].HeaderText;
+            //                    }
+            //                    // ghi du lieu
+            //                    for (int i = 0; i < dataGridViewProduct.Rows.Count; i++)
+            //                    {
+            //                        for (int j = 0; j < dataGridViewProduct.Columns.Count; j++)
+            //                        {
+            //                            ws.Cell(i + 3, j + 1).Value = dataGridViewProduct.Rows[i].Cells[j].Value.ToString();
+            //                        }
+            //                    }
+            //                    ws.Columns().AdjustToContents();
+            //                    wb.SaveAs(sfd.FileName);
+            //                    MessageBox.Show("Export to Excel successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //                }
+            //            }
+            //            catch (Exception ex)
+            //            {
+            //                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //            }
+            //        }
+            //    }
+            //}
+        }
+
         private void ClearTextBox()
         {
             textBoxMaSP.Clear();
@@ -206,6 +259,8 @@ namespace CuaHangMayTinh.Views
 
         }
 
+
+
         private void dataGridViewProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -223,9 +278,11 @@ namespace CuaHangMayTinh.Views
             textBoxSoLuong.Text = dataGridViewProduct.CurrentRow.Cells[10].Value.ToString();
         }
 
+
+
         #endregion
 
-        
+
 
         private void comboBoxMaNCC_SelectedIndexChanged(object sender, EventArgs e)
         {
