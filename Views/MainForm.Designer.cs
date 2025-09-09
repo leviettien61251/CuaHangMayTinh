@@ -53,12 +53,7 @@
             this.FormTest = new System.Windows.Forms.ToolStripMenuItem();
             this.frmCustomerManagement = new System.Windows.Forms.ToolStripMenuItem();
             this.FormTestSanPham = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblUser = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lblDate = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -161,13 +156,13 @@
             // Invoice
             // 
             this.Invoice.Name = "Invoice";
-            this.Invoice.Size = new System.Drawing.Size(180, 22);
+            this.Invoice.Size = new System.Drawing.Size(158, 22);
             this.Invoice.Text = "Tạo hóa đơn";
             // 
             // InvoiceHistory
             // 
             this.InvoiceHistory.Name = "InvoiceHistory";
-            this.InvoiceHistory.Size = new System.Drawing.Size(180, 22);
+            this.InvoiceHistory.Size = new System.Drawing.Size(158, 22);
             this.InvoiceHistory.Text = "Lịch sử hóa đơn";
             // 
             // Report
@@ -184,19 +179,19 @@
             // Revenue
             // 
             this.Revenue.Name = "Revenue";
-            this.Revenue.Size = new System.Drawing.Size(180, 22);
+            this.Revenue.Size = new System.Drawing.Size(178, 22);
             this.Revenue.Text = "Doanh thu";
             // 
             // Inventory
             // 
             this.Inventory.Name = "Inventory";
-            this.Inventory.Size = new System.Drawing.Size(180, 22);
+            this.Inventory.Size = new System.Drawing.Size(178, 22);
             this.Inventory.Text = "Tồn kho";
             // 
             // BestSeller
             // 
             this.BestSeller.Name = "BestSeller";
-            this.BestSeller.Size = new System.Drawing.Size(180, 22);
+            this.BestSeller.Size = new System.Drawing.Size(178, 22);
             this.BestSeller.Text = "Sản phẩm bán chạy";
             // 
             // trợGiúpToolStripMenuItem
@@ -250,46 +245,11 @@
             this.FormTestSanPham.Size = new System.Drawing.Size(197, 22);
             this.FormTestSanPham.Text = "FormTestSanPham";
             // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblStatus,
-            this.lblUser,
-            this.lblDate});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 597);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1184, 24);
-            this.statusStrip1.TabIndex = 1;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(920, 19);
-            this.lblStatus.Spring = true;
-            this.lblStatus.Text = "Trạng thái: Sẵn sàng";
-            this.lblStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblUser
-            // 
-            this.lblUser.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
-            this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(146, 19);
-            this.lblUser.Text = "Nhân viên: Nguyễn Văn A";
-            // 
-            // lblDate
-            // 
-            this.lblDate.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(103, 19);
-            this.lblDate.Text = "Ngày: 01/01/2023";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 621);
-            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -299,8 +259,6 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,10 +286,6 @@
         private System.Windows.Forms.ToolStripMenuItem trợGiúpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hướngDẫnSửDụngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem giớiThiệuToolStripMenuItem;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel lblStatus;
-        private System.Windows.Forms.ToolStripStatusLabel lblUser;
-        private System.Windows.Forms.ToolStripStatusLabel lblDate;
         private System.Windows.Forms.ToolStripMenuItem formToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem FormTest;
         private System.Windows.Forms.ToolStripMenuItem đăngNhậpToolStripMenuItem;
