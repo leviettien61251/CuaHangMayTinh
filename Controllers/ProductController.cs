@@ -33,6 +33,8 @@ namespace CuaHangMayTinh.Controllers
 
         private ProductController() { }
 
+        
+
         public List<Product> GetProduct()
         {
             string script = @"EXEC usp_GetSanPham";
@@ -49,10 +51,59 @@ namespace CuaHangMayTinh.Controllers
             return list;
         }
 
+        public List<Product> GetProductByIdCategory(int maDanhMuc)
+        {
+            string script = @"EXEC usp_GetSanPhamByMaDanhMuc @MaDanhMuc ";
+
+            List<Product> list = new List<Product>();
+
+            DataTable dt = DataProvider.Instance.ExecuteQuery(script, new object[] { maDanhMuc });
+
+            foreach (DataRow item in dt.Rows)
+            {
+                Product product = new Product(item);
+                list.Add(product);
+            }
+            return list;
+        }
+
+
+        public object GetTotalProduct()
+        {
+            string script = @"EXEC usp_CountSanPham";
+            return DataProvider.Instance.ExecuteScalar(script);
+        }
+
+        public object GetOutOfStockProduct() 
+        {
+            string script = @"EXEC usp_CountSanPhamHetHang";
+            return DataProvider.Instance.ExecuteScalar(script);
+        }
+
+        public object GetLowStockProduct()
+        {
+            string script = @"EXEC usp_CountSanPhamSapHetHang @SoLuongTon = 5";
+            return DataProvider.Instance.ExecuteScalar(script);
+        }
+
+        public object GetInRangeProduct(int minStock, int maxStock) 
+        {
+            string script = @"EXEC usp_CountSanPhamByStock @MinStock , @MaxStock ";
+            return DataProvider.Instance.ExecuteScalar(script, new object[] {minStock, maxStock});
+        }
+
         public void LoadProduct(DataGridView dataGridViewName)
         {
             string script = @"EXEC usp_GetSanPham";
             dataGridViewName.DataSource = DataProvider.Instance.ExecuteQuery(script);
+        }
+
+
+        public void LoadProductByIDCategory(DataGridView dataGridViewName, int maDanhMuc)
+        {
+            //string script = @"EXEC usp_GetSanPhamByMaDanhMuc @MaDanhMuc ";
+            string script = @"EXEC usp_GetSanPhamByStock @MaDanhMuc ";
+            dataGridViewName.DataSource = DataProvider.Instance.ExecuteQuery(script, new object[] { maDanhMuc});
         }
 
         public void LoadCLickedProduct()
@@ -91,5 +142,7 @@ namespace CuaHangMayTinh.Controllers
             string script = @"EXEC usp_SearchProductByName_Category_Supplier @Search ";
             dataGridViewName.DataSource = DataProvider.Instance.ExecuteQuery(script, new object[] { Search });
         }
+
+
     }
 }
