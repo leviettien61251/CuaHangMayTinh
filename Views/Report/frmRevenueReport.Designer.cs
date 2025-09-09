@@ -84,13 +84,15 @@
             // 
             // dgvRevenueDetails
             // 
+            this.dgvRevenueDetails.AllowUserToAddRows = false;
+            this.dgvRevenueDetails.AllowUserToDeleteRows = false;
             this.dgvRevenueDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRevenueDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvRevenueDetails.Location = new System.Drawing.Point(3, 16);
             this.dgvRevenueDetails.Name = "dgvRevenueDetails";
             this.dgvRevenueDetails.ReadOnly = true;
             this.dgvRevenueDetails.Size = new System.Drawing.Size(794, 49);
-            this.dgvRevenueDetails.TabIndex = 0;
+            this.dgvRevenueDetails.TabIndex = 3;
             // 
             // statusStrip1
             // 
@@ -399,7 +401,6 @@
 
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.GroupBox grbDetails;
-        private System.Windows.Forms.DataGridView dgvRevenueDetails;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblStatus;
         private System.Windows.Forms.GroupBox grbSummary;
@@ -423,5 +424,6 @@
         private System.Windows.Forms.DateTimePicker dtpToDate;
         private System.Windows.Forms.Button btnViewReport;
         private System.Windows.Forms.Button btnExport;
+        private System.Windows.Forms.DataGridView dgvRevenueDetails;
     }
 }

@@ -212,14 +212,15 @@
             // 
             // dgvBestSellers
             // 
+            this.dgvBestSellers.AllowUserToAddRows = false;
+            this.dgvBestSellers.AllowUserToDeleteRows = false;
             this.dgvBestSellers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBestSellers.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvBestSellers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBestSellers.Location = new System.Drawing.Point(3, 16);
             this.dgvBestSellers.Name = "dgvBestSellers";
             this.dgvBestSellers.ReadOnly = true;
             this.dgvBestSellers.Size = new System.Drawing.Size(794, 151);
-            this.dgvBestSellers.TabIndex = 0;
+            this.dgvBestSellers.TabIndex = 3;
             // 
             // btnViewReport
             // 
@@ -350,7 +351,6 @@
         private System.Windows.Forms.ToolStripStatusLabel lblStatus;
         private System.Windows.Forms.ToolStripStatusLabel lblRecordCount;
         private System.Windows.Forms.GroupBox grbBestSellersList;
-        private System.Windows.Forms.DataGridView dgvBestSellers;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem xemChiTiếtSảnPhẩmToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xemLịchSửBánToolStripMenuItem;
@@ -369,5 +369,6 @@
         private System.Windows.Forms.Button btnViewReport;
         private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.Label labelChart;
+        private System.Windows.Forms.DataGridView dgvBestSellers;
     }
 }

@@ -22,7 +22,7 @@ namespace CuaHangMayTinh.Controllers
                 }
                 return instance;
             }
-            private set
+            set
             {
                 ExcelController instance = value;
             }
