@@ -59,7 +59,7 @@
             this.txtMinStock = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnExport = new System.Windows.Forms.Button();
-            this.labelID = new System.Windows.Forms.Label();
+            this.buttonClear = new System.Windows.Forms.Button();
             this.grbFilter = new System.Windows.Forms.GroupBox();
             this.danhMucTableAdapter = new CuaHangMayTinh.CuaHangMayTinhDataSetTableAdapters.DanhMucTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
@@ -364,7 +364,7 @@
             this.tableLayoutPanel1.Controls.Add(this.txtMaxStock, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnViewReport, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnExport, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.labelID, 4, 1);
+            this.tableLayoutPanel1.Controls.Add(this.buttonClear, 5, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -386,14 +386,16 @@
             this.btnExport.UseVisualStyleBackColor = true;
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
-            // labelID
+            // buttonClear
             // 
-            this.labelID.AutoSize = true;
-            this.labelID.Location = new System.Drawing.Point(453, 30);
-            this.labelID.Name = "labelID";
-            this.labelID.Size = new System.Drawing.Size(43, 13);
-            this.labelID.TabIndex = 8;
-            this.labelID.Text = "IDCate:";
+            this.buttonClear.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonClear.Location = new System.Drawing.Point(553, 33);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(238, 25);
+            this.buttonClear.TabIndex = 9;
+            this.buttonClear.Text = "Xóa bộ lọc";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // grbFilter
             // 
@@ -472,11 +474,11 @@
         private System.Windows.Forms.Button btnViewReport;
         private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label labelID;
         private System.Windows.Forms.BindingSource cuaHangMayTinhDataSetBindingSource;
         private CuaHangMayTinhDataSet cuaHangMayTinhDataSet;
         private System.Windows.Forms.BindingSource danhMucBindingSource;
         private CuaHangMayTinhDataSetTableAdapters.DanhMucTableAdapter danhMucTableAdapter;
         private System.Windows.Forms.DataGridView dataGridViewProduct;
+        private System.Windows.Forms.Button buttonClear;
     }
 }

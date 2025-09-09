@@ -1,4 +1,5 @@
 ﻿using CuaHangMayTinh.Models;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -33,7 +34,7 @@ namespace CuaHangMayTinh.Controllers
 
         private ProductController() { }
 
-        
+
 
         public List<Product> GetProduct()
         {
@@ -74,7 +75,7 @@ namespace CuaHangMayTinh.Controllers
             return DataProvider.Instance.ExecuteScalar(script);
         }
 
-        public object GetOutOfStockProduct() 
+        public object GetOutOfStockProduct()
         {
             string script = @"EXEC usp_CountSanPhamHetHang";
             return DataProvider.Instance.ExecuteScalar(script);
@@ -86,10 +87,10 @@ namespace CuaHangMayTinh.Controllers
             return DataProvider.Instance.ExecuteScalar(script);
         }
 
-        public object GetInRangeProduct(int minStock, int maxStock) 
+        public object GetInRangeProduct(int minStock, int maxStock)
         {
             string script = @"EXEC usp_CountSanPhamByStock @MinStock , @MaxStock ";
-            return DataProvider.Instance.ExecuteScalar(script, new object[] {minStock, maxStock});
+            return DataProvider.Instance.ExecuteScalar(script, new object[] { minStock, maxStock });
         }
 
         public void LoadProduct(DataGridView dataGridViewName)
@@ -98,12 +99,39 @@ namespace CuaHangMayTinh.Controllers
             dataGridViewName.DataSource = DataProvider.Instance.ExecuteQuery(script);
         }
 
+        public void LoadProductOnlyStock(DataGridView dataGridViewName, int minStock, int maxStock)
+        {
+            try
+            {
+                string script = @"EXEC usp_GetSanPhamByOnlyStock @MinStock , @MaxStock ";
+                dataGridViewName.DataSource = DataProvider.Instance.ExecuteQuery(script, new object[] { minStock, maxStock });
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+        }
 
         public void LoadProductByIDCategory(DataGridView dataGridViewName, int maDanhMuc)
         {
-            //string script = @"EXEC usp_GetSanPhamByMaDanhMuc @MaDanhMuc ";
             string script = @"EXEC usp_GetSanPhamByStock @MaDanhMuc ";
-            dataGridViewName.DataSource = DataProvider.Instance.ExecuteQuery(script, new object[] { maDanhMuc});
+            dataGridViewName.DataSource = DataProvider.Instance.ExecuteQuery(script, new object[] { maDanhMuc });
+        }
+
+        public void LoadProductByIDCategoryAndStock(DataGridView dataGridViewName, int maDanhMuc, int minStock, int maxStock)
+        {
+            try
+            {
+                string script = @"EXEC usp_GetSanPhamByStock @MaDanhMuc , @MinStock , @MaxStock ";
+                dataGridViewName.DataSource = DataProvider.Instance.ExecuteQuery(script, new object[] { maDanhMuc, minStock, maxStock });
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+
         }
 
         public void LoadCLickedProduct()
