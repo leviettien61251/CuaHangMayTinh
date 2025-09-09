@@ -37,6 +37,7 @@
             this.xemChiTiếtSảnPhẩmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.grbInventoryList = new System.Windows.Forms.GroupBox();
+            this.dataGridViewProduct = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
@@ -61,11 +62,11 @@
             this.labelID = new System.Windows.Forms.Label();
             this.grbFilter = new System.Windows.Forms.GroupBox();
             this.danhMucTableAdapter = new CuaHangMayTinh.CuaHangMayTinhDataSetTableAdapters.DanhMucTableAdapter();
-            this.dataGridViewProduct = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.grbInventoryList.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.grbSummary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.danhMucBindingSource)).BeginInit();
@@ -73,7 +74,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayTinhDataSet)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.grbFilter.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).BeginInit();
             this.SuspendLayout();
             // 
             // errorProvider
@@ -135,6 +135,18 @@
             this.grbInventoryList.TabIndex = 6;
             this.grbInventoryList.TabStop = false;
             this.grbInventoryList.Text = "Danh sách tồn kho";
+            // 
+            // dataGridViewProduct
+            // 
+            this.dataGridViewProduct.AllowUserToAddRows = false;
+            this.dataGridViewProduct.AllowUserToDeleteRows = false;
+            this.dataGridViewProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewProduct.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewProduct.Location = new System.Drawing.Point(3, 16);
+            this.dataGridViewProduct.Name = "dataGridViewProduct";
+            this.dataGridViewProduct.ReadOnly = true;
+            this.dataGridViewProduct.Size = new System.Drawing.Size(794, 291);
+            this.dataGridViewProduct.TabIndex = 2;
             // 
             // label5
             // 
@@ -398,18 +410,6 @@
             // 
             this.danhMucTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridViewProduct
-            // 
-            this.dataGridViewProduct.AllowUserToAddRows = false;
-            this.dataGridViewProduct.AllowUserToDeleteRows = false;
-            this.dataGridViewProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewProduct.Location = new System.Drawing.Point(3, 16);
-            this.dataGridViewProduct.Name = "dataGridViewProduct";
-            this.dataGridViewProduct.ReadOnly = true;
-            this.dataGridViewProduct.Size = new System.Drawing.Size(794, 291);
-            this.dataGridViewProduct.TabIndex = 2;
-            // 
             // frmInventoryReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -428,6 +428,7 @@
             this.contextMenuStrip1.ResumeLayout(false);
             this.grbInventoryList.ResumeLayout(false);
             this.grbInventoryList.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.grbSummary.ResumeLayout(false);
@@ -437,7 +438,6 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.grbFilter.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduct)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
