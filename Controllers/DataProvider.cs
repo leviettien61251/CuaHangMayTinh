@@ -23,7 +23,10 @@ namespace CuaHangMayTinh.Controllers
                 if (instance == null)
                     instance = new DataProvider(); return DataProvider.instance;
             }
-            private set { DataProvider.instance = value; }
+            private set
+            {
+                instance = value;
+            }
         }
 
         private DataProvider() { }
@@ -178,7 +181,7 @@ namespace CuaHangMayTinh.Controllers
                 }
 
                 data = cmd.ExecuteReader();
-                
+
                 conn.Close();
 
             }

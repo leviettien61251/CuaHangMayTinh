@@ -25,7 +25,10 @@ namespace CuaHangMayTinh.Controllers
                 }
                 return instance;
             }
-            private set { CustomerController.instance = value; }
+            private set
+            {
+                instance = value;
+            }
         }
 
         private CustomerController() { }

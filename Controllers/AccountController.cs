@@ -28,7 +28,7 @@ namespace CuaHangMayTinh.Models
             }
             private set
             {
-                instance = value;
+                AccountController.instance = value;
             }
         }
 

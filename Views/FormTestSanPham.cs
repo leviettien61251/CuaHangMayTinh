@@ -1,6 +1,7 @@
 ﻿using CuaHangMayTinh.Controllers;
 using CuaHangMayTinh.Models;
 using Microsoft.Data.SqlClient;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -21,6 +23,7 @@ namespace CuaHangMayTinh.Views
         }
 
         int idSupplier, idCategory;
+        readonly Regex regexOnlyNum = new Regex("^[0-9]*$");
 
         private void FormTestSanPham_Load(object sender, EventArgs e)
         {
@@ -129,24 +132,8 @@ namespace CuaHangMayTinh.Views
             txtStockQuantity.Clear();
         }
 
-        private void btnAddNew_Click(object sender, EventArgs e)
+        private void AddProduct_(string TenSP, int MaDanhMuc, int MaNCC, string MoTa, int BaoHanh, float GiaNhap, float GiaBan, int SoLuongTon)
         {
-            string TenSP = txtProductName.Text;
-
-            int MaDanhMuc = idCategory;
-
-            int MaNCC = idSupplier;
-
-            string MoTa = "";
-
-            int BaoHanh = 36;
-
-            float GiaNhap = (float)double.Parse(txtImportPrice.Text);
-
-            float GiaBan = (float)double.Parse(txtSalePrice.Text);
-
-            int SoLuongTon = (int)double.Parse(txtStockQuantity.Text);
-
             try
             {
 
@@ -168,29 +155,10 @@ namespace CuaHangMayTinh.Views
 
                 throw ex;
             }
-
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void UpdateProduct_(int MaSP, string TenSP, int MaDanhMuc, int MaNCC, string MoTa, int BaoHanh, float GiaNhap, float GiaBan, int SoLuongTon)
         {
-            int MaSP = (int)double.Parse(txtProductId.Text);
-
-            string TenSP = txtProductName.Text;
-
-            int MaDanhMuc = idCategory;
-
-            int MaNCC = idSupplier;
-
-            string MoTa = "";
-
-            int BaoHanh = 36;
-
-            float GiaNhap = (float)double.Parse(txtImportPrice.Text);
-
-            float GiaBan = (float)double.Parse(txtSalePrice.Text);
-
-            int SoLuongTon = (int)double.Parse(txtStockQuantity.Text);
-
             try
             {
                 bool result = ProductController.Instance.UpdateProduct(MaSP, TenSP, MaDanhMuc, MaNCC, MoTa, BaoHanh, GiaNhap, GiaBan, SoLuongTon);
@@ -210,6 +178,79 @@ namespace CuaHangMayTinh.Views
             {
 
                 throw ex;
+            }
+        }
+
+        private void btnAddNew_Click(object sender, EventArgs e)
+        {
+            string TenSP = txtProductName.Text;
+
+            int MaDanhMuc = idCategory;
+
+            int MaNCC = idSupplier;
+
+            string MoTa = "";
+
+            int BaoHanh = 36;
+
+            if (txtImportPrice.Text.IsNullOrEmpty() || txtSalePrice.Text.IsNullOrEmpty() || txtStockQuantity.Text.IsNullOrEmpty())
+            {
+                MessageBox.Show("Hãy điền đầy đủ thông tin!");
+            }
+            else
+            {
+                if (regexOnlyNum.IsMatch(txtImportPrice.Text) || regexOnlyNum.IsMatch(txtSalePrice.Text) || regexOnlyNum.IsMatch(txtStockQuantity.Text))
+                {
+                    float GiaNhap = (float)double.Parse(txtImportPrice.Text);
+
+                    float GiaBan = (float)double.Parse(txtSalePrice.Text);
+
+                    int SoLuongTon = (int)double.Parse(txtStockQuantity.Text);
+                    AddProduct_(TenSP, MaDanhMuc, MaNCC, MoTa, BaoHanh, GiaNhap, GiaBan, SoLuongTon);
+                }
+                else
+                {
+                    MessageBox.Show("Giá bán, giá nhập, số lượng tồn chỉ được điền số");
+                }
+            }
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            int MaSP = (int)double.Parse(txtProductId.Text);
+
+            string TenSP = txtProductName.Text;
+
+            int MaDanhMuc = idCategory;
+
+            int MaNCC = idSupplier;
+
+            string MoTa = " ";
+
+            int BaoHanh = 36;
+
+            
+
+            if (txtImportPrice.Text.IsNullOrEmpty() || txtSalePrice.Text.IsNullOrEmpty() || txtStockQuantity.Text.IsNullOrEmpty())
+            {
+                MessageBox.Show("Hãy điền đầy đủ thông tin!");
+            }
+            else
+            {
+                if (regexOnlyNum.IsMatch(txtImportPrice.Text) && regexOnlyNum.IsMatch(txtSalePrice.Text) && regexOnlyNum.IsMatch(txtStockQuantity.Text))
+                {
+                    float GiaNhap = (float)double.Parse(txtImportPrice.Text);
+
+                    float GiaBan = (float)double.Parse(txtSalePrice.Text);
+
+                    int SoLuongTon = (int)double.Parse(txtStockQuantity.Text);
+                    UpdateProduct_(MaSP, TenSP, MaDanhMuc, MaNCC, MoTa, BaoHanh, GiaNhap, GiaBan, SoLuongTon);
+                }
+                else
+                {
+                    MessageBox.Show("Giá bán, giá nhập, số lượng tồn chỉ được điền số");
+                }
             }
 
 

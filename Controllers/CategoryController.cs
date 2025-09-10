@@ -27,7 +27,7 @@ namespace CuaHangMayTinh.Controllers
 
             private set
             {
-                CategoryController.instance = value;
+                instance = value;
             }
         }
 
@@ -72,7 +72,7 @@ namespace CuaHangMayTinh.Controllers
 
         public List<Category> GetCategory()
         {
-            
+
             List<Category> list = new List<Category>();
 
             script = @"EXEC usp_GetDanhMuc";
@@ -85,7 +85,7 @@ namespace CuaHangMayTinh.Controllers
 
                 list.Add(category);
             }
-            return list; 
+            return list;
         }
 
         public void LoadCategory(DataGridView dataGridViewName)
