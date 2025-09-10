@@ -37,7 +37,6 @@ namespace CuaHangMayTinh.Views.Manager
             }
             catch (SqlException ex)
             {
-
                 throw ex;
             }
 

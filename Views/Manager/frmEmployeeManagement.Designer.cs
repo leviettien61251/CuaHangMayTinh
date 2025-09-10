@@ -58,6 +58,10 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.grbEmployeeInfo = new System.Windows.Forms.GroupBox();
+            this.cuaHangMayTinhDataSet = new CuaHangMayTinh.CuaHangMayTinhDataSet();
+            this.cuaHangMayTinhDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.chucVuBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.chucVuTableAdapter = new CuaHangMayTinh.CuaHangMayTinhDataSetTableAdapters.ChucVuTableAdapter();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
@@ -67,6 +71,9 @@
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.grbEmployeeInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayTinhDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayTinhDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chucVuBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDelete
@@ -119,6 +126,7 @@
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // dgvEmployees
             // 
@@ -129,6 +137,7 @@
             this.dgvEmployees.ReadOnly = true;
             this.dgvEmployees.Size = new System.Drawing.Size(788, 113);
             this.dgvEmployees.TabIndex = 1;
+            this.dgvEmployees.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployees_CellClick);
             // 
             // label1
             // 
@@ -263,17 +272,15 @@
             // 
             // cbPosition
             // 
+            this.cbPosition.DataSource = this.chucVuBindingSource;
+            this.cbPosition.DisplayMember = "ChucVu";
             this.cbPosition.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbPosition.FormattingEnabled = true;
-            this.cbPosition.Items.AddRange(new object[] {
-            "Nhân viên bán hàng",
-            "Quản lý",
-            "Kế toán",
-            "Kho"});
             this.cbPosition.Location = new System.Drawing.Point(241, 143);
             this.cbPosition.Name = "cbPosition";
             this.cbPosition.Size = new System.Drawing.Size(550, 21);
             this.cbPosition.TabIndex = 11;
+            this.cbPosition.SelectedIndexChanged += new System.EventHandler(this.cbPosition_SelectedIndexChanged);
             // 
             // btnAddNew
             // 
@@ -371,6 +378,25 @@
             this.grbEmployeeInfo.TabStop = false;
             this.grbEmployeeInfo.Text = "Thông tin nhân viên";
             // 
+            // cuaHangMayTinhDataSet
+            // 
+            this.cuaHangMayTinhDataSet.DataSetName = "CuaHangMayTinhDataSet";
+            this.cuaHangMayTinhDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cuaHangMayTinhDataSetBindingSource
+            // 
+            this.cuaHangMayTinhDataSetBindingSource.DataSource = this.cuaHangMayTinhDataSet;
+            this.cuaHangMayTinhDataSetBindingSource.Position = 0;
+            // 
+            // chucVuBindingSource
+            // 
+            this.chucVuBindingSource.DataMember = "ChucVu";
+            this.chucVuBindingSource.DataSource = this.cuaHangMayTinhDataSetBindingSource;
+            // 
+            // chucVuTableAdapter
+            // 
+            this.chucVuTableAdapter.ClearBeforeFill = true;
+            // 
             // frmEmployeeManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -394,6 +420,9 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.grbEmployeeInfo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayTinhDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayTinhDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chucVuBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -430,5 +459,9 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnAddNew;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.BindingSource cuaHangMayTinhDataSetBindingSource;
+        private CuaHangMayTinhDataSet cuaHangMayTinhDataSet;
+        private System.Windows.Forms.BindingSource chucVuBindingSource;
+        private CuaHangMayTinhDataSetTableAdapters.ChucVuTableAdapter chucVuTableAdapter;
     }
 }
