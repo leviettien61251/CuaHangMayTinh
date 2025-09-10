@@ -1,4 +1,5 @@
 ﻿using CuaHangMayTinh.Controllers;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -54,6 +55,8 @@ namespace CuaHangMayTinh.Views.Manager
             txtPhone.Text = dgvCustomers.CurrentRow.Cells[3].Value.ToString();
             txtAddress.Text = dgvCustomers.CurrentRow.Cells[4].Value.ToString();
         }
+
+        
 
         private void btnAddNew_Click(object sender, EventArgs e)
         {

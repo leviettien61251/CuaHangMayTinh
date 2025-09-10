@@ -117,6 +117,7 @@
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // dgvSuppliers
             // 
@@ -127,6 +128,7 @@
             this.dgvSuppliers.ReadOnly = true;
             this.dgvSuppliers.Size = new System.Drawing.Size(788, 113);
             this.dgvSuppliers.TabIndex = 1;
+            this.dgvSuppliers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSuppliers_CellClick);
             // 
             // label1
             // 

@@ -1,4 +1,5 @@
 ﻿using CuaHangMayTinh.Models;
+using DocumentFormat.OpenXml.Math;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
@@ -74,7 +75,7 @@ namespace CuaHangMayTinh.Controllers
 
             List<Supplier> list = new List<Supplier>();
 
-            string script = @"EXEC usp_GetNhaCungCap";
+            string script = @"EXEC usp_GetSupplier";
 
             DataTable dt = DataProvider.Instance.ExecuteQuery(script);
 
@@ -85,6 +86,81 @@ namespace CuaHangMayTinh.Controllers
                 list.Add(supplier);
             }
             return list;
+        }
+
+        public void LoadSupplier(DataGridView dataGridViewName)
+        {
+
+            string script = @"EXEC usp_GetSupplier";
+            try
+            {
+                dataGridViewName.DataSource = DataProvider.Instance.ExecuteQuery(script);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+
+        public bool AddSupplier(string tenNCC, string email, string soDienThoai, string diaChi)
+        {
+            int result;
+
+            string script = @"EXEC usp_AddSupplier @TenNCC , @Email , @SoDienThoai , @DiaChi ";
+
+            try
+            {
+                result = DataProvider.Instance.ExecuteNonQuery(script, new object[] { tenNCC, email, soDienThoai, diaChi });
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+
+            return result == 1;
+        }
+
+        public bool UpdateSupplier(int maNCC, string tenNCC, string email, string soDienThoai, string diaChi)
+        {
+            int result;
+
+            string script = @"EXEC usp_UpdateSupplierInfo @MaNCC , @TenNCC , @Email , @SoDienThoai , @DiaChi ";
+
+            try
+            {
+                result = DataProvider.Instance.ExecuteNonQuery(script, new object[] { maNCC, tenNCC, email, soDienThoai, diaChi });
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+
+            return result == 1;
+        }
+
+        public bool DeleteSupplier(int maNCC)
+        {
+            int result;
+
+            string script = @"EXEC usp_DelSupplierById @MaNCC";
+
+            try
+            {
+                result = DataProvider.Instance.ExecuteNonQuery(script, new object[] { maNCC });
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+
+            return result == 1;
+        }
+
+        public void SearchSupplier(string search, DataGridView dataGridViewName)
+        {
+            string script = @"EXEC usp_SearchSupplier @Search = N'" + search + "'";
+            dataGridViewName.DataSource = DataProvider.Instance.ExecuteQuery(script);
         }
     }
 }

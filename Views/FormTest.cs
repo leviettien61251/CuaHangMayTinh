@@ -3,6 +3,7 @@ using CuaHangMayTinh.Controllers;
 using CuaHangMayTinh.Models;
 using DocumentFormat.OpenXml.Spreadsheet;
 using Microsoft.Data.SqlClient;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -69,6 +70,14 @@ namespace CuaHangMayTinh.Views
 
             comboBoxMaNCC.DisplayMember = "Name";
 
+        }
+
+        private void checkTextBoxOnlyNumber(TextBox textBoxName)
+        {
+            if (textBoxName.Text.IsNullOrEmpty())
+            {
+                MessageBox.Show("Hãy điền đầy đủ thông tin!");
+            }
         }
 
         private void loadComboboxCategoryByID()
