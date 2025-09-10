@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -20,6 +21,8 @@ namespace CuaHangMayTinh.Views.Manager
         {
             InitializeComponent();
         }
+
+        readonly Regex regexOnlyNum = new Regex(@"^\d+$");
 
         private void frmSupplierManagement_Load(object sender, EventArgs e)
         {
@@ -118,8 +121,6 @@ namespace CuaHangMayTinh.Views.Manager
             string email = txtEmail.Text;
             string diaChi = txtAddress.Text;
             string soDienThoai = txtPhone.Text;
-            Regex regexOnlyNum = new Regex(@"^\d+$");
-            Regex regexNoWhitespace = new Regex("^[^0-9\\s]+$");
             if (txtPhone.Text.IsNullOrEmpty())
             {
                 MessageBox.Show("Hãy điền đầy đủ thông tin!");
@@ -128,13 +129,13 @@ namespace CuaHangMayTinh.Views.Manager
             {
                 if (regexOnlyNum.IsMatch(txtPhone.Text))
                 {
-                    if (regexNoWhitespace.IsMatch(txtEmail.Text))
+                    if (CheckValidate.Instance.IsEmail(email))
                     {
                         AddSupplier_(tenNCC, email, diaChi, soDienThoai);
                     }
                     else
                     {
-                        MessageBox.Show("Email không chứa khoảng trắng");
+                        MessageBox.Show("Sai định dạng Email");
                     }
                 }
                 else
@@ -153,8 +154,6 @@ namespace CuaHangMayTinh.Views.Manager
             string email = txtEmail.Text.ToString();
             string diaChi = txtAddress.Text.ToString();
             string soDienThoai = txtPhone.Text.ToString();
-            Regex regexOnlyNum = new Regex(@"^\d+$");
-            Regex regexNoWhitespace = new Regex("^[^0-9\\s]+$");
             if (txtPhone.Text.IsNullOrEmpty())
             {
                 MessageBox.Show("Hãy điền đầy đủ thông tin!");
@@ -163,13 +162,13 @@ namespace CuaHangMayTinh.Views.Manager
             {
                 if (regexOnlyNum.IsMatch(txtPhone.Text))
                 {
-                    if (regexNoWhitespace.IsMatch(txtEmail.Text))
+                    if (CheckValidate.Instance.IsEmail(email))
                     {
                         UpdateSupplier_(maNCC, tenNCC, email, diaChi, soDienThoai);
                     }
                     else
                     {
-                        MessageBox.Show("Email không chứa khoảng trắng");
+                        MessageBox.Show("Sai định dạng Email");
                     }
                 }
                 else

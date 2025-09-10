@@ -1,4 +1,5 @@
 ﻿using CuaHangMayTinh.Controllers;
+using DocumentFormat.OpenXml.ExtendedProperties;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
@@ -20,6 +22,8 @@ namespace CuaHangMayTinh.Views.Manager
         {
             InitializeComponent();
         }
+
+        readonly Regex regexOnlyNum = new Regex(@"^\d+$");
 
         private void frmCustomerManagement_Load(object sender, EventArgs e)
         {
@@ -56,16 +60,8 @@ namespace CuaHangMayTinh.Views.Manager
             txtAddress.Text = dgvCustomers.CurrentRow.Cells[4].Value.ToString();
         }
 
-        
-
-        private void btnAddNew_Click(object sender, EventArgs e)
+        private void AddCustomer_(string hoTen, string email, string diaChi, string soDienThoai, int diemTichLuy)
         {
-            string hoTen = txtCustomerName.Text;
-            string email = txtEmail.Text;
-            string diaChi = txtAddress.Text;
-            string soDienThoai = txtPhone.Text;
-            int diemTichLuy = 1000;//default = 0
-
             try
             {
                 bool result;
@@ -90,15 +86,8 @@ namespace CuaHangMayTinh.Views.Manager
             }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void UpdateCustomer_(int maKH, string hoTen, string email, string diaChi, string soDienThoai, int diemTichLuy)
         {
-            int maKH = (int)Convert.ToDouble(txtCustomerId.Text);
-            string hoTen = txtCustomerName.Text.ToString();
-            string email = txtEmail.Text.ToString();
-            string diaChi = txtAddress.Text.ToString();
-            string soDienThoai = txtPhone.Text.ToString();
-            int diemTichLuy = 1000;//default = 0
-
             try
             {
                 bool result;
@@ -120,6 +109,71 @@ namespace CuaHangMayTinh.Views.Manager
             {
 
                 throw ex;
+            }
+        }
+
+        private void btnAddNew_Click(object sender, EventArgs e)
+        {
+            string hoTen = txtCustomerName.Text;
+            string email = txtEmail.Text;
+            string diaChi = txtAddress.Text;
+            string soDienThoai = txtPhone.Text;
+            int diemTichLuy = 1000;//default = 0
+
+            if (txtPhone.Text.IsNullOrEmpty())
+            {
+                MessageBox.Show("Hãy điền đầy đủ thông tin!");
+            }
+            else
+            {
+                if (regexOnlyNum.IsMatch(txtPhone.Text))
+                {
+                    if (CheckValidate.Instance.IsEmail(email))
+                    {
+                        AddCustomer_(hoTen, email, diaChi, soDienThoai, diemTichLuy);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sai định dạng Email");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Số điện thoại chỉ được điền số");
+                }
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            int maKH = (int)Convert.ToDouble(txtCustomerId.Text);
+            string hoTen = txtCustomerName.Text.ToString();
+            string email = txtEmail.Text.ToString();
+            string diaChi = txtAddress.Text.ToString();
+            string soDienThoai = txtPhone.Text.ToString();
+            int diemTichLuy = 1000;//default = 0
+
+            if (txtPhone.Text.IsNullOrEmpty())
+            {
+                MessageBox.Show("Hãy điền đầy đủ thông tin!");
+            }
+            else
+            {
+                if (regexOnlyNum.IsMatch(txtPhone.Text))
+                {
+                    if (CheckValidate.Instance.IsEmail(email))
+                    {
+                        UpdateCustomer_(maKH, hoTen, email, diaChi, soDienThoai, diemTichLuy);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sai định dạng Email");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Số điện thoại chỉ được điền số");
+                }
             }
         }
 

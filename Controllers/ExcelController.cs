@@ -24,7 +24,7 @@ namespace CuaHangMayTinh.Controllers
             }
             set
             {
-                ExcelController instance = value;
+                instance = value;
             }
         }
 
