@@ -210,5 +210,18 @@ namespace CuaHangMayTinh.Views.Manager
             string search = txtSearchSupplier.Text.ToLower();
             SupplierController.Instance.SearchSupplier(search, dgvSuppliers);
         }
+
+        private void buttonExcel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //ExcelController.Instance.SaveExcel(dgvInventory, "titleWb", "Inventory");
+                ExcelController.Instance.SaveExcel(dgvSuppliers, "Suppliers List", "Suppliers");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

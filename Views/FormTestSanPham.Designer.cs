@@ -36,6 +36,7 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.grbProductInfo = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonExcel = new System.Windows.Forms.Button();
             this.cbSupplier = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtProductId = new System.Windows.Forms.TextBox();
@@ -54,13 +55,11 @@
             this.btnAddNew = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.labelCHeckID = new System.Windows.Forms.Label();
             this.grbProductList = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.txtSearchProduct = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.labelNCC = new System.Windows.Forms.Label();
             this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             ((System.ComponentModel.ISupportInitialize)(this.danhMucBindingSource)).BeginInit();
@@ -138,6 +137,7 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel1.Controls.Add(this.buttonExcel, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.cbSupplier, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtProductId, 1, 0);
@@ -153,7 +153,6 @@
             this.tableLayoutPanel1.Controls.Add(this.label7, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.txtStockQuantity, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.labelCHeckID, 1, 7);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -166,8 +165,19 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(340, 614);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // buttonExcel
+            // 
+            this.buttonExcel.Location = new System.Drawing.Point(105, 535);
+            this.buttonExcel.Name = "buttonExcel";
+            this.buttonExcel.Size = new System.Drawing.Size(75, 23);
+            this.buttonExcel.TabIndex = 17;
+            this.buttonExcel.Text = "Excel";
+            this.buttonExcel.UseVisualStyleBackColor = true;
+            this.buttonExcel.Click += new System.EventHandler(this.buttonExcel_Click);
             // 
             // cbSupplier
             // 
@@ -342,15 +352,6 @@
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = true;
             // 
-            // labelCHeckID
-            // 
-            this.labelCHeckID.AutoSize = true;
-            this.labelCHeckID.Location = new System.Drawing.Point(105, 532);
-            this.labelCHeckID.Name = "labelCHeckID";
-            this.labelCHeckID.Size = new System.Drawing.Size(24, 13);
-            this.labelCHeckID.TabIndex = 17;
-            this.labelCHeckID.Text = "ID: ";
-            // 
             // grbProductList
             // 
             this.grbProductList.Controls.Add(this.tableLayoutPanel2);
@@ -381,7 +382,6 @@
             // 
             this.flowLayoutPanel2.Controls.Add(this.txtSearchProduct);
             this.flowLayoutPanel2.Controls.Add(this.btnSearch);
-            this.flowLayoutPanel2.Controls.Add(this.labelNCC);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
@@ -405,17 +405,10 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // labelNCC
-            // 
-            this.labelNCC.AutoSize = true;
-            this.labelNCC.Location = new System.Drawing.Point(295, 0);
-            this.labelNCC.Name = "labelNCC";
-            this.labelNCC.Size = new System.Drawing.Size(35, 13);
-            this.labelNCC.TabIndex = 2;
-            this.labelNCC.Text = "NCC: ";
-            // 
             // dgvProducts
             // 
+            this.dgvProducts.AllowUserToAddRows = false;
+            this.dgvProducts.AllowUserToDeleteRows = false;
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProducts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProducts.Location = new System.Drawing.Point(3, 43);
@@ -491,14 +484,13 @@
         private System.Windows.Forms.Button btnAddNew;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Label labelCHeckID;
         private System.Windows.Forms.GroupBox grbProductList;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.TextBox txtSearchProduct;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Label labelNCC;
         private System.Windows.Forms.DataGridView dgvProducts;
         private System.Windows.Forms.TabControl tabControlMain;
+        private System.Windows.Forms.Button buttonExcel;
     }
 }
