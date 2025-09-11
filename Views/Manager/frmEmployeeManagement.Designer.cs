@@ -34,6 +34,7 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.txtSearchEmployee = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.buttonExcel = new System.Windows.Forms.Button();
             this.dgvEmployees = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtEmployeeId = new System.Windows.Forms.TextBox();
@@ -51,6 +52,9 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.cbPosition = new System.Windows.Forms.ComboBox();
+            this.chucVuBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cuaHangMayTinhDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cuaHangMayTinhDataSet = new CuaHangMayTinh.CuaHangMayTinhDataSet();
             this.btnAddNew = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.txtSalary = new System.Windows.Forms.TextBox();
@@ -58,9 +62,6 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.grbEmployeeInfo = new System.Windows.Forms.GroupBox();
-            this.cuaHangMayTinhDataSet = new CuaHangMayTinh.CuaHangMayTinhDataSet();
-            this.cuaHangMayTinhDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.chucVuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.chucVuTableAdapter = new CuaHangMayTinh.CuaHangMayTinhDataSetTableAdapters.ChucVuTableAdapter();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -68,12 +69,12 @@
             this.grbEmployeeList.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chucVuBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayTinhDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayTinhDataSet)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.grbEmployeeInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayTinhDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayTinhDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chucVuBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDelete
@@ -105,6 +106,7 @@
             // 
             this.flowLayoutPanel2.Controls.Add(this.txtSearchEmployee);
             this.flowLayoutPanel2.Controls.Add(this.btnSearch);
+            this.flowLayoutPanel2.Controls.Add(this.buttonExcel);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
@@ -128,8 +130,20 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
+            // buttonExcel
+            // 
+            this.buttonExcel.Location = new System.Drawing.Point(295, 3);
+            this.buttonExcel.Name = "buttonExcel";
+            this.buttonExcel.Size = new System.Drawing.Size(75, 23);
+            this.buttonExcel.TabIndex = 3;
+            this.buttonExcel.Text = "Excel";
+            this.buttonExcel.UseVisualStyleBackColor = true;
+            this.buttonExcel.Click += new System.EventHandler(this.buttonExcel_Click);
+            // 
             // dgvEmployees
             // 
+            this.dgvEmployees.AllowUserToAddRows = false;
+            this.dgvEmployees.AllowUserToDeleteRows = false;
             this.dgvEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmployees.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEmployees.Location = new System.Drawing.Point(3, 43);
@@ -282,6 +296,21 @@
             this.cbPosition.TabIndex = 11;
             this.cbPosition.SelectedIndexChanged += new System.EventHandler(this.cbPosition_SelectedIndexChanged);
             // 
+            // chucVuBindingSource
+            // 
+            this.chucVuBindingSource.DataMember = "ChucVu";
+            this.chucVuBindingSource.DataSource = this.cuaHangMayTinhDataSetBindingSource;
+            // 
+            // cuaHangMayTinhDataSetBindingSource
+            // 
+            this.cuaHangMayTinhDataSetBindingSource.DataSource = this.cuaHangMayTinhDataSet;
+            this.cuaHangMayTinhDataSetBindingSource.Position = 0;
+            // 
+            // cuaHangMayTinhDataSet
+            // 
+            this.cuaHangMayTinhDataSet.DataSetName = "CuaHangMayTinhDataSet";
+            this.cuaHangMayTinhDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // btnAddNew
             // 
             this.btnAddNew.Location = new System.Drawing.Point(3, 3);
@@ -378,21 +407,6 @@
             this.grbEmployeeInfo.TabStop = false;
             this.grbEmployeeInfo.Text = "Thông tin nhân viên";
             // 
-            // cuaHangMayTinhDataSet
-            // 
-            this.cuaHangMayTinhDataSet.DataSetName = "CuaHangMayTinhDataSet";
-            this.cuaHangMayTinhDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cuaHangMayTinhDataSetBindingSource
-            // 
-            this.cuaHangMayTinhDataSetBindingSource.DataSource = this.cuaHangMayTinhDataSet;
-            this.cuaHangMayTinhDataSetBindingSource.Position = 0;
-            // 
-            // chucVuBindingSource
-            // 
-            this.chucVuBindingSource.DataMember = "ChucVu";
-            this.chucVuBindingSource.DataSource = this.cuaHangMayTinhDataSetBindingSource;
-            // 
             // chucVuTableAdapter
             // 
             this.chucVuTableAdapter.ClearBeforeFill = true;
@@ -416,13 +430,13 @@
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chucVuBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayTinhDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayTinhDataSet)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.grbEmployeeInfo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayTinhDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cuaHangMayTinhDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chucVuBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -435,7 +449,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.TextBox txtSearchEmployee;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.DataGridView dgvEmployees;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtEmployeeId;
         private System.Windows.Forms.Label label2;
@@ -463,5 +476,7 @@
         private CuaHangMayTinhDataSet cuaHangMayTinhDataSet;
         private System.Windows.Forms.BindingSource chucVuBindingSource;
         private CuaHangMayTinhDataSetTableAdapters.ChucVuTableAdapter chucVuTableAdapter;
+        private System.Windows.Forms.Button buttonExcel;
+        private System.Windows.Forms.DataGridView dgvEmployees;
     }
 }

@@ -219,5 +219,18 @@ namespace CuaHangMayTinh.Views.Manager
             string search = txtSearchEmployee.Text.ToLower();
             EmployeeController.Instance.SearchEmployee(search, dgvEmployees);
         }
+
+        private void buttonExcel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //ExcelController.Instance.SaveExcel(dgvInventory, "titleWb", "Inventory");
+                ExcelController.Instance.SaveExcel(dgvEmployees, "Employee List", "Employee");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

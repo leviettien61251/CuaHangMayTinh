@@ -36,5 +36,10 @@ namespace CuaHangMayTinh.Views.Manager
         {
 
         }
+
+        private void buttonExcel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

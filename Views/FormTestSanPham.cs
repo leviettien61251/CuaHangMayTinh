@@ -96,7 +96,6 @@ namespace CuaHangMayTinh.Views
             if (selected != null)
             {
                 idSupplier = selected.MaNCC;
-                labelNCC.Text = idSupplier.ToString();
             }
         }
 
@@ -116,7 +115,6 @@ namespace CuaHangMayTinh.Views
             if (selected != null)
             {
                 idCategory = selected.MaDanhMuc;
-                labelCHeckID.Text = "ID: " + idCategory.ToString();
             }
 
 
@@ -254,6 +252,19 @@ namespace CuaHangMayTinh.Views
             }
 
 
+        }
+
+        private void buttonExcel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //ExcelController.Instance.SaveExcel(dgvInventory, "titleWb", "Inventory");
+                ExcelController.Instance.SaveExcel(dgvProducts, "Product List", "Product");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
