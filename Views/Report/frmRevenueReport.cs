@@ -21,5 +21,20 @@ namespace CuaHangMayTinh.Views.Report
         {
 
         }
+
+        private void btnViewReport_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvRevenueDetails_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
