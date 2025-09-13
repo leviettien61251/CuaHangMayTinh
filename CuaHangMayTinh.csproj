@@ -197,8 +197,10 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\ExcelController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\RevenueController.cs" />
     <Compile Include="Controllers\SupplierController.cs" />
     <Compile Include="CuaHangMayTinhDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -219,6 +221,7 @@
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Supplier.cs" />
     <Compile Include="Program.cs" />
@@ -289,6 +292,18 @@
     <Compile Include="Views\Report\frmRevenueReport.Designer.cs">
       <DependentUpon>frmRevenueReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Sale\frmDetailOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Sale\frmDetailOrder.Designer.cs">
+      <DependentUpon>frmDetailOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sale\frmOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Sale\frmOrder.Designer.cs">
+      <DependentUpon>frmOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Sale\frmCreateInvoice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -343,6 +358,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Report\frmRevenueReport.resx">
       <DependentUpon>frmRevenueReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Sale\frmDetailOrder.resx">
+      <DependentUpon>frmDetailOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Sale\frmOrder.resx">
+      <DependentUpon>frmOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Sale\frmCreateInvoice.resx">
       <DependentUpon>frmCreateInvoice.cs</DependentUpon>

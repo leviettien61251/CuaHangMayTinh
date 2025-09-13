@@ -42,6 +42,7 @@
             this.Sale = new System.Windows.Forms.ToolStripMenuItem();
             this.Invoice = new System.Windows.Forms.ToolStripMenuItem();
             this.InvoiceHistory = new System.Windows.Forms.ToolStripMenuItem();
+            this.Order = new System.Windows.Forms.ToolStripMenuItem();
             this.Report = new System.Windows.Forms.ToolStripMenuItem();
             this.Revenue = new System.Windows.Forms.ToolStripMenuItem();
             this.Inventory = new System.Windows.Forms.ToolStripMenuItem();
@@ -122,32 +123,33 @@
             // Product
             // 
             this.Product.Name = "Product";
-            this.Product.Size = new System.Drawing.Size(180, 22);
+            this.Product.Size = new System.Drawing.Size(148, 22);
             this.Product.Text = "Sản phẩm";
             // 
             // Customer
             // 
             this.Customer.Name = "Customer";
-            this.Customer.Size = new System.Drawing.Size(180, 22);
+            this.Customer.Size = new System.Drawing.Size(148, 22);
             this.Customer.Text = "Khách hàng";
             // 
             // Employee
             // 
             this.Employee.Name = "Employee";
-            this.Employee.Size = new System.Drawing.Size(180, 22);
+            this.Employee.Size = new System.Drawing.Size(148, 22);
             this.Employee.Text = "Nhân viên";
             // 
             // Supplier
             // 
             this.Supplier.Name = "Supplier";
-            this.Supplier.Size = new System.Drawing.Size(180, 22);
+            this.Supplier.Size = new System.Drawing.Size(148, 22);
             this.Supplier.Text = "Nhà cung cấp";
             // 
             // Sale
             // 
             this.Sale.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Invoice,
-            this.InvoiceHistory});
+            this.InvoiceHistory,
+            this.Order});
             this.Sale.Name = "Sale";
             this.Sale.Size = new System.Drawing.Size(69, 20);
             this.Sale.Text = "Bán hàng";
@@ -156,14 +158,20 @@
             // Invoice
             // 
             this.Invoice.Name = "Invoice";
-            this.Invoice.Size = new System.Drawing.Size(158, 22);
+            this.Invoice.Size = new System.Drawing.Size(180, 22);
             this.Invoice.Text = "Tạo hóa đơn";
             // 
             // InvoiceHistory
             // 
             this.InvoiceHistory.Name = "InvoiceHistory";
-            this.InvoiceHistory.Size = new System.Drawing.Size(158, 22);
+            this.InvoiceHistory.Size = new System.Drawing.Size(180, 22);
             this.InvoiceHistory.Text = "Lịch sử hóa đơn";
+            // 
+            // Order
+            // 
+            this.Order.Name = "Order";
+            this.Order.Size = new System.Drawing.Size(180, 22);
+            this.Order.Text = "Tạo đơn hàng";
             // 
             // Report
             // 
@@ -291,5 +299,6 @@
         private System.Windows.Forms.ToolStripMenuItem đăngNhậpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem frmCustomerManagement;
         private System.Windows.Forms.ToolStripMenuItem FormTestSanPham;
+        private System.Windows.Forms.ToolStripMenuItem Order;
     }
 }

@@ -94,6 +94,10 @@ namespace ComputerStoreManagement
                     frmInvoiceHistory F_InvoiceHistory = new frmInvoiceHistory();
                     form = F_InvoiceHistory;
                     break;
+                case "Order":
+                    frmOrder F_Order = new frmOrder();
+                    form = F_Order;
+                    break;
                 default:
                     break;
             }
@@ -139,6 +143,6 @@ namespace ComputerStoreManagement
 
         }
 
-
+        
     }
 }

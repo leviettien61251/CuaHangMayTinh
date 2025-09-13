@@ -93,6 +93,7 @@
             this.dgvRevenueDetails.ReadOnly = true;
             this.dgvRevenueDetails.Size = new System.Drawing.Size(794, 49);
             this.dgvRevenueDetails.TabIndex = 3;
+            this.dgvRevenueDetails.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRevenueDetails_CellClick);
             // 
             // statusStrip1
             // 
@@ -288,6 +289,7 @@
             this.dtpFromDate.Name = "dtpFromDate";
             this.dtpFromDate.Size = new System.Drawing.Size(144, 20);
             this.dtpFromDate.TabIndex = 3;
+            this.dtpFromDate.Value = new System.DateTime(2025, 9, 13, 2, 29, 35, 0);
             // 
             // label3
             // 
@@ -306,6 +308,7 @@
             this.dtpToDate.Name = "dtpToDate";
             this.dtpToDate.Size = new System.Drawing.Size(188, 20);
             this.dtpToDate.TabIndex = 5;
+            this.dtpToDate.Value = new System.DateTime(2025, 9, 13, 2, 30, 50, 0);
             // 
             // btnViewReport
             // 
@@ -317,6 +320,7 @@
             this.btnViewReport.TabIndex = 6;
             this.btnViewReport.Text = "Xem báo cáo";
             this.btnViewReport.UseVisualStyleBackColor = true;
+            this.btnViewReport.Click += new System.EventHandler(this.btnViewReport_Click);
             // 
             // btnExport
             // 
@@ -328,6 +332,7 @@
             this.btnExport.TabIndex = 7;
             this.btnExport.Text = "Xuất Excel";
             this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // tableLayoutPanel1
             // 

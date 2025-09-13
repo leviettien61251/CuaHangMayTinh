@@ -61,6 +61,8 @@ namespace CuaHangMayTinh.Views
                         this.Hide(); //ẩn form đăng nhập
                         F_main.ShowDialog();
                         this.Show();
+                        textBoxUsername.Clear();
+                        textBoxPassword.Clear();
                     }
                     else
                     {
@@ -70,7 +72,7 @@ namespace CuaHangMayTinh.Views
                 }
 
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 throw ex;
             }
