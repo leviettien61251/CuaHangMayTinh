@@ -41,6 +41,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtEmployeeId = new System.Windows.Forms.TextBox();
+            this.txtCustomerId = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -65,11 +69,8 @@
             this.grbTotal = new System.Windows.Forms.GroupBox();
             this.grbInvoiceDetails = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtCustomerId = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtEmployeeId = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -83,7 +84,6 @@
             this.grbTotal.SuspendLayout();
             this.grbInvoiceDetails.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAddProduct
@@ -215,6 +215,50 @@
             this.label1.Size = new System.Drawing.Size(74, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã đơn hàng:";
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 3;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.23973F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.0411F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.54795F));
+            this.tableLayoutPanel5.Controls.Add(this.txtEmployeeId, 2, 0);
+            this.tableLayoutPanel5.Controls.Add(this.txtCustomerId, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.label9, 1, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(498, 57);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(584, 22);
+            this.tableLayoutPanel5.TabIndex = 11;
+            // 
+            // txtEmployeeId
+            // 
+            this.txtEmployeeId.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtEmployeeId.Location = new System.Drawing.Point(320, 3);
+            this.txtEmployeeId.Name = "txtEmployeeId";
+            this.txtEmployeeId.Size = new System.Drawing.Size(261, 20);
+            this.txtEmployeeId.TabIndex = 2;
+            // 
+            // txtCustomerId
+            // 
+            this.txtCustomerId.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtCustomerId.Location = new System.Drawing.Point(3, 3);
+            this.txtCustomerId.Name = "txtCustomerId";
+            this.txtCustomerId.Size = new System.Drawing.Size(229, 20);
+            this.txtCustomerId.TabIndex = 0;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label9.Location = new System.Drawing.Point(238, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(76, 22);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Mã nhân viên:";
             // 
             // label7
             // 
@@ -488,50 +532,6 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1097, 537);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 3;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.23973F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.0411F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.54795F));
-            this.tableLayoutPanel5.Controls.Add(this.txtEmployeeId, 2, 0);
-            this.tableLayoutPanel5.Controls.Add(this.txtCustomerId, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label9, 1, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(498, 57);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(584, 22);
-            this.tableLayoutPanel5.TabIndex = 11;
-            // 
-            // txtCustomerId
-            // 
-            this.txtCustomerId.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtCustomerId.Location = new System.Drawing.Point(3, 3);
-            this.txtCustomerId.Name = "txtCustomerId";
-            this.txtCustomerId.Size = new System.Drawing.Size(229, 20);
-            this.txtCustomerId.TabIndex = 0;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Location = new System.Drawing.Point(238, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(76, 22);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Mã nhân viên:";
-            // 
-            // txtEmployeeId
-            // 
-            this.txtEmployeeId.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtEmployeeId.Location = new System.Drawing.Point(320, 3);
-            this.txtEmployeeId.Name = "txtEmployeeId";
-            this.txtEmployeeId.Size = new System.Drawing.Size(261, 20);
-            this.txtEmployeeId.TabIndex = 2;
-            // 
             // frmOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -544,6 +544,8 @@
             this.Load += new System.EventHandler(this.FormCreateInvoice_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
@@ -558,8 +560,6 @@
             this.grbTotal.ResumeLayout(false);
             this.grbInvoiceDetails.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -91,7 +91,55 @@ namespace CuaHangMayTinh.Controllers
             string script = @"EXEC usp_DelDonHang @MaDH , @NguoiThucHien , @LyDoXoa ";
             try
             {
-                result = DataProvider.Instance.ExecuteNonQuery(script, new object[] { maDH, maNV, "Xoa"});
+                result = DataProvider.Instance.ExecuteNonQuery(script, new object[] { maDH, maNV, "Xoa" });
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+            return result > 0;
+        }
+
+        public bool AddProductToOrderDetail(int maDH, int maSP, int soLuong)
+        {
+            int result;
+            string script = @"EXEC usp_AddChiTietDonHang @MaDH , @MaSP , @SoLuong ";
+            try
+            {
+                result = DataProvider.Instance.ExecuteNonQuery(script, new object[] { maDH, maSP, soLuong });
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+            return result > 0;
+        }
+
+        public bool UpdateProductFromDetailOrder(int maCTDH, int maDH, int maSP, int soLuong)
+        {
+            int result;
+            string script = @"EXEC usp_UpdateChiTietDonHang @MaCTDH , @MaDH , @MaSP , @newSoLuong ";
+            try
+            {
+                result = DataProvider.Instance.ExecuteNonQuery(script, new object[] { maCTDH, maDH, maSP, soLuong });
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
+            }
+            return result > 0;
+        }
+
+        public bool DelProductFromDetailOrder(int maCTDH, int maDH, int maSP)
+        {
+            int result;
+            string script = @"EXEC usp_DeleteChiTietDonHangByID @MaCTDH , @MaDH , @MaSP ";
+            try
+            {
+                result = DataProvider.Instance.ExecuteNonQuery(script, new object[] { maCTDH, maDH, maSP });
             }
             catch (SqlException ex)
             {

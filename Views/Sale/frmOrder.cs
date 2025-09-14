@@ -142,6 +142,7 @@ namespace CuaHangMayTinh.Views.Sale
             if (txtCustomerId.Text.IsNullOrEmpty() || txtEmployeeId.Text.IsNullOrEmpty() || txtCustomerAddress.Text.IsNullOrEmpty())
             {
                 MessageBox.Show("Hãy điền đầy đủ thông tin!");
+                return;
             }
             else
             {
@@ -158,6 +159,7 @@ namespace CuaHangMayTinh.Views.Sale
                 else
                 {
                     MessageBox.Show("Mã khách hàng và mã nhân viên chỉ được điền số!!");
+                    return;
                 }
             }
         }
@@ -167,6 +169,7 @@ namespace CuaHangMayTinh.Views.Sale
             if (txtOrderId.Text.IsNullOrEmpty() || txtEmployeeId.Text.IsNullOrEmpty())
             {
                 MessageBox.Show("Hãy điền đầy đủ mã đơn hàng và mã nhân viên!");
+                return;
             }
             else
             {
@@ -179,6 +182,7 @@ namespace CuaHangMayTinh.Views.Sale
                 else
                 {
                     MessageBox.Show("Mã đơn hàng và mã nhân viên chỉ được điền số!!");
+                    return;
                 }
             }
         }
