@@ -85,6 +85,7 @@ namespace CuaHangMayTinh.Views.Manager
                 else
                 {
                     MessageBox.Show("Thêm mới nhân viên không thành công!");
+                    return;
                 }
             }
             catch (Exception ex)
@@ -111,6 +112,7 @@ namespace CuaHangMayTinh.Views.Manager
                 else
                 {
                     MessageBox.Show("Sửa mới nhân viên không thành công!");
+                    return;
                 }
             }
             catch (Exception ex)
@@ -129,6 +131,7 @@ namespace CuaHangMayTinh.Views.Manager
             if (txtPhone.Text.IsNullOrEmpty())
             {
                 MessageBox.Show("Hãy điền đầy đủ thông tin!");
+                return;
             }
             else
             {
@@ -144,11 +147,13 @@ namespace CuaHangMayTinh.Views.Manager
                     else
                     {
                         MessageBox.Show("Sai định dạng Email");
+                        return;
                     }
                 }
                 else
                 {
                     MessageBox.Show("Số điện thoại và lương cơ bản chỉ được điền số");
+                    return;
                 }
             }
         }
@@ -164,6 +169,7 @@ namespace CuaHangMayTinh.Views.Manager
             if (txtPhone.Text.IsNullOrEmpty())
             {
                 MessageBox.Show("Hãy điền đầy đủ thông tin!");
+                return;
             }
             else
             {
@@ -178,11 +184,13 @@ namespace CuaHangMayTinh.Views.Manager
                     else
                     {
                         MessageBox.Show("Sai định dạng Email");
+                        return;
                     }
                 }
                 else
                 {
                     MessageBox.Show("Số điện thoại và lương cơ bản chỉ được điền số");
+                    return;
                 }
             }
         }
@@ -205,6 +213,7 @@ namespace CuaHangMayTinh.Views.Manager
                 else
                 {
                     MessageBox.Show("Xóa nhân viên không thành công!");
+                    return;
                 }
             }
             catch (Exception ex)

@@ -77,6 +77,7 @@ namespace CuaHangMayTinh.Views.Manager
                 else
                 {
                     MessageBox.Show("Thêm mới nhà cung cấp không thành công!");
+                    return;
                 }
             }
             catch (Exception ex)
@@ -103,6 +104,7 @@ namespace CuaHangMayTinh.Views.Manager
                 else
                 {
                     MessageBox.Show("Sửa mới nhà cung cấp không thành công!");
+                    return;
                 }
             }
             catch (Exception ex)
@@ -123,6 +125,7 @@ namespace CuaHangMayTinh.Views.Manager
             if (txtPhone.Text.IsNullOrEmpty())
             {
                 MessageBox.Show("Hãy điền đầy đủ thông tin!");
+                return;
             }
             else
             {
@@ -135,11 +138,13 @@ namespace CuaHangMayTinh.Views.Manager
                     else
                     {
                         MessageBox.Show("Sai định dạng Email");
+                        return;
                     }
                 }
                 else
                 {
                     MessageBox.Show("Số điện thoại chỉ được điền số");
+                    return;
                 }
             }
 
@@ -156,6 +161,7 @@ namespace CuaHangMayTinh.Views.Manager
             if (txtPhone.Text.IsNullOrEmpty())
             {
                 MessageBox.Show("Hãy điền đầy đủ thông tin!");
+                return;
             }
             else
             {
@@ -168,11 +174,13 @@ namespace CuaHangMayTinh.Views.Manager
                     else
                     {
                         MessageBox.Show("Sai định dạng Email");
+                        return;
                     }
                 }
                 else
                 {
                     MessageBox.Show("Số điện thoại chỉ được điền số");
+                    return;
                 }
             }
 
@@ -196,6 +204,7 @@ namespace CuaHangMayTinh.Views.Manager
                 else
                 {
                     MessageBox.Show("Xóa nhà cung cấp không thành công!");
+                    return;
                 }
             }
             catch (Exception ex)
