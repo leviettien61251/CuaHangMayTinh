@@ -30,26 +30,19 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.hệThốngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.đăngNhậpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Management = new System.Windows.Forms.ToolStripMenuItem();
             this.Product = new System.Windows.Forms.ToolStripMenuItem();
             this.Customer = new System.Windows.Forms.ToolStripMenuItem();
             this.Employee = new System.Windows.Forms.ToolStripMenuItem();
             this.Supplier = new System.Windows.Forms.ToolStripMenuItem();
             this.Sale = new System.Windows.Forms.ToolStripMenuItem();
-            this.Invoice = new System.Windows.Forms.ToolStripMenuItem();
-            this.InvoiceHistory = new System.Windows.Forms.ToolStripMenuItem();
             this.Order = new System.Windows.Forms.ToolStripMenuItem();
             this.Report = new System.Windows.Forms.ToolStripMenuItem();
             this.Revenue = new System.Windows.Forms.ToolStripMenuItem();
             this.Inventory = new System.Windows.Forms.ToolStripMenuItem();
             this.BestSeller = new System.Windows.Forms.ToolStripMenuItem();
-            this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hướngDẫnSửDụngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.giớiThiệuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FormTest = new System.Windows.Forms.ToolStripMenuItem();
             this.frmCustomerManagement = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,7 +57,6 @@
             this.Management,
             this.Sale,
             this.Report,
-            this.trợGiúpToolStripMenuItem,
             this.formToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -75,19 +67,11 @@
             // hệThốngToolStripMenuItem
             // 
             this.hệThốngToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.đăngNhậpToolStripMenuItem,
             this.đăngXuấtToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.thoátToolStripMenuItem});
+            this.toolStripSeparator1});
             this.hệThốngToolStripMenuItem.Name = "hệThốngToolStripMenuItem";
             this.hệThốngToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.hệThốngToolStripMenuItem.Text = "Hệ thống";
-            // 
-            // đăngNhậpToolStripMenuItem
-            // 
-            this.đăngNhậpToolStripMenuItem.Name = "đăngNhậpToolStripMenuItem";
-            this.đăngNhậpToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
-            this.đăngNhậpToolStripMenuItem.Text = "Đăng nhập";
             // 
             // đăngXuấtToolStripMenuItem
             // 
@@ -100,13 +84,6 @@
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(129, 6);
-            // 
-            // thoátToolStripMenuItem
-            // 
-            this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
-            this.thoátToolStripMenuItem.Text = "Thoát";
-            this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
             // 
             // Management
             // 
@@ -147,25 +124,11 @@
             // Sale
             // 
             this.Sale.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Invoice,
-            this.InvoiceHistory,
             this.Order});
             this.Sale.Name = "Sale";
             this.Sale.Size = new System.Drawing.Size(69, 20);
             this.Sale.Text = "Bán hàng";
             this.Sale.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.Sale_DropDownItemClicked);
-            // 
-            // Invoice
-            // 
-            this.Invoice.Name = "Invoice";
-            this.Invoice.Size = new System.Drawing.Size(180, 22);
-            this.Invoice.Text = "Tạo hóa đơn";
-            // 
-            // InvoiceHistory
-            // 
-            this.InvoiceHistory.Name = "InvoiceHistory";
-            this.InvoiceHistory.Size = new System.Drawing.Size(180, 22);
-            this.InvoiceHistory.Text = "Lịch sử hóa đơn";
             // 
             // Order
             // 
@@ -187,41 +150,20 @@
             // Revenue
             // 
             this.Revenue.Name = "Revenue";
-            this.Revenue.Size = new System.Drawing.Size(178, 22);
+            this.Revenue.Size = new System.Drawing.Size(180, 22);
             this.Revenue.Text = "Doanh thu";
             // 
             // Inventory
             // 
             this.Inventory.Name = "Inventory";
-            this.Inventory.Size = new System.Drawing.Size(178, 22);
+            this.Inventory.Size = new System.Drawing.Size(180, 22);
             this.Inventory.Text = "Tồn kho";
             // 
             // BestSeller
             // 
             this.BestSeller.Name = "BestSeller";
-            this.BestSeller.Size = new System.Drawing.Size(178, 22);
+            this.BestSeller.Size = new System.Drawing.Size(180, 22);
             this.BestSeller.Text = "Sản phẩm bán chạy";
-            // 
-            // trợGiúpToolStripMenuItem
-            // 
-            this.trợGiúpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.hướngDẫnSửDụngToolStripMenuItem,
-            this.giớiThiệuToolStripMenuItem});
-            this.trợGiúpToolStripMenuItem.Name = "trợGiúpToolStripMenuItem";
-            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
-            this.trợGiúpToolStripMenuItem.Text = "Trợ giúp";
-            // 
-            // hướngDẫnSửDụngToolStripMenuItem
-            // 
-            this.hướngDẫnSửDụngToolStripMenuItem.Name = "hướngDẫnSửDụngToolStripMenuItem";
-            this.hướngDẫnSửDụngToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.hướngDẫnSửDụngToolStripMenuItem.Text = "Hướng dẫn sử dụng";
-            // 
-            // giớiThiệuToolStripMenuItem
-            // 
-            this.giớiThiệuToolStripMenuItem.Name = "giớiThiệuToolStripMenuItem";
-            this.giớiThiệuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.giớiThiệuToolStripMenuItem.Text = "Giới thiệu";
             // 
             // formToolStripMenuItem
             // 
@@ -278,25 +220,18 @@
         private System.Windows.Forms.ToolStripMenuItem hệThốngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Management;
         private System.Windows.Forms.ToolStripMenuItem Product;
         private System.Windows.Forms.ToolStripMenuItem Customer;
         private System.Windows.Forms.ToolStripMenuItem Employee;
         private System.Windows.Forms.ToolStripMenuItem Supplier;
         private System.Windows.Forms.ToolStripMenuItem Sale;
-        private System.Windows.Forms.ToolStripMenuItem Invoice;
-        private System.Windows.Forms.ToolStripMenuItem InvoiceHistory;
         private System.Windows.Forms.ToolStripMenuItem Report;
         private System.Windows.Forms.ToolStripMenuItem Revenue;
         private System.Windows.Forms.ToolStripMenuItem Inventory;
         private System.Windows.Forms.ToolStripMenuItem BestSeller;
-        private System.Windows.Forms.ToolStripMenuItem trợGiúpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem hướngDẫnSửDụngToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem giớiThiệuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem formToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem FormTest;
-        private System.Windows.Forms.ToolStripMenuItem đăngNhậpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem frmCustomerManagement;
         private System.Windows.Forms.ToolStripMenuItem FormTestSanPham;
         private System.Windows.Forms.ToolStripMenuItem Order;

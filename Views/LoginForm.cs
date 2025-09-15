@@ -40,7 +40,7 @@ namespace CuaHangMayTinh.Views
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-
+            
             try
             {
                 var username = textBoxUsername.Text;//lấy username từ textbox
