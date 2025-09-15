@@ -43,7 +43,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.grbSummary = new System.Windows.Forms.GroupBox();
             this.panelChart = new System.Windows.Forms.Panel();
-            this.labelChart = new System.Windows.Forms.Label();
             this.grbChart = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cbReportType = new System.Windows.Forms.ComboBox();
@@ -61,7 +60,6 @@
             this.statusStrip1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.grbSummary.SuspendLayout();
-            this.panelChart.SuspendLayout();
             this.grbChart.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.grbFilter.SuspendLayout();
@@ -93,7 +91,6 @@
             this.dgvRevenueDetails.ReadOnly = true;
             this.dgvRevenueDetails.Size = new System.Drawing.Size(794, 49);
             this.dgvRevenueDetails.TabIndex = 3;
-            this.dgvRevenueDetails.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRevenueDetails_CellClick);
             // 
             // statusStrip1
             // 
@@ -217,24 +214,11 @@
             // 
             this.panelChart.BackColor = System.Drawing.Color.White;
             this.panelChart.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelChart.Controls.Add(this.labelChart);
             this.panelChart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChart.Location = new System.Drawing.Point(3, 16);
             this.panelChart.Name = "panelChart";
             this.panelChart.Size = new System.Drawing.Size(794, 181);
             this.panelChart.TabIndex = 0;
-            // 
-            // labelChart
-            // 
-            this.labelChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelChart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.labelChart.ForeColor = System.Drawing.Color.Gray;
-            this.labelChart.Location = new System.Drawing.Point(0, 0);
-            this.labelChart.Name = "labelChart";
-            this.labelChart.Size = new System.Drawing.Size(792, 179);
-            this.labelChart.TabIndex = 0;
-            this.labelChart.Text = "BIỂU ĐỒ DOANH THU THEO THÁNG\r\n(Dữ liệu sẽ hiển thị khi xem báo cáo)";
-            this.labelChart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // grbChart
             // 
@@ -271,6 +255,7 @@
             this.cbReportType.Name = "cbReportType";
             this.cbReportType.Size = new System.Drawing.Size(144, 21);
             this.cbReportType.TabIndex = 1;
+            this.cbReportType.SelectedIndexChanged += new System.EventHandler(this.cbReportType_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -392,7 +377,6 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.grbSummary.ResumeLayout(false);
-            this.panelChart.ResumeLayout(false);
             this.grbChart.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -418,7 +402,6 @@
         private System.Windows.Forms.Label lblAverageInvoice;
         private System.Windows.Forms.GroupBox grbChart;
         private System.Windows.Forms.Panel panelChart;
-        private System.Windows.Forms.Label labelChart;
         private System.Windows.Forms.GroupBox grbFilter;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label1;
