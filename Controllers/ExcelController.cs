@@ -43,7 +43,6 @@ namespace CuaHangMayTinh.Controllers
                             using (XLWorkbook wb = new XLWorkbook())
                             {
                                 var ws = wb.Worksheets.Add(titleWs);
-
                                 
                                 var range = ws.Range(1, 1, 1, dataGridViewName.Columns.Count);
                                 range.Merge();
@@ -55,7 +54,6 @@ namespace CuaHangMayTinh.Controllers
                                 // ghi header
                                 for (int i = 0; i < dataGridViewName.Columns.Count; i++)
                                 {
-
                                     ws.Cell(2, i + 1).Value = dataGridViewName.Columns[i].HeaderText;
                                 }
                                 // ghi du lieu

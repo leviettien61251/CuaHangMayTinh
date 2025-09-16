@@ -127,6 +127,7 @@ namespace CuaHangMayTinh.Views.Sale
                 else
                 {
                     MessageBox.Show("Xóa đơn hàng " + maDH + " không thành công");
+                    return;
                 }
 
             }

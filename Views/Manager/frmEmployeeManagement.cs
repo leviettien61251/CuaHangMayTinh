@@ -22,7 +22,7 @@ namespace CuaHangMayTinh.Views.Manager
             InitializeComponent();
         }
 
-        readonly Regex regexOnlyNum = new Regex(@"^\d+$");
+        readonly Regex regexOnlyNum = new Regex(@"^\d+$");// validate number
 
         private void frmEmployeeManagement_Load(object sender, EventArgs e)
         {
@@ -117,7 +117,6 @@ namespace CuaHangMayTinh.Views.Manager
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
@@ -233,7 +232,6 @@ namespace CuaHangMayTinh.Views.Manager
         {
             try
             {
-                //ExcelController.Instance.SaveExcel(dgvInventory, "titleWb", "Inventory");
                 ExcelController.Instance.SaveExcel(dgvEmployees, "Employee List", "Employee");
             }
             catch (Exception ex)

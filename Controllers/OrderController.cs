@@ -92,6 +92,7 @@ namespace CuaHangMayTinh.Controllers
             try
             {
                 result = DataProvider.Instance.ExecuteNonQuery(script, new object[] { maDH, maNV, "Xoa" });
+                
             }
             catch (SqlException ex)
             {
