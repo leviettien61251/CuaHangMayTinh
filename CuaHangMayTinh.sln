@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35828.75 d17.13
+VisualStudioVersion = 17.13.35828.75
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CuaHangMayTinh", "CuaHangMayTinh.csproj", "{CE34E9ED-A9C6-494B-B950-B9D8D44BFCA3}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupCuaHangMT", "..\SetupCuaHangMT\SetupCuaHangMT.vdproj", "{C1A98913-72A7-37B4-5C8F-8FD1F1CDC4B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,8 @@ Global
 		{CE34E9ED-A9C6-494B-B950-B9D8D44BFCA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE34E9ED-A9C6-494B-B950-B9D8D44BFCA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE34E9ED-A9C6-494B-B950-B9D8D44BFCA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1A98913-72A7-37B4-5C8F-8FD1F1CDC4B2}.Debug|Any CPU.ActiveCfg = Debug
+		{C1A98913-72A7-37B4-5C8F-8FD1F1CDC4B2}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

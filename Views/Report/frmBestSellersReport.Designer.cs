@@ -294,6 +294,7 @@
             this.btnExport.TabIndex = 9;
             this.btnExport.Text = "Xuất Excel";
             this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // tableLayoutPanel1
             // 

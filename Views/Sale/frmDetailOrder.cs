@@ -224,6 +224,7 @@ namespace CuaHangMayTinh.Views.Sale
         private void dgvDetailOrder_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtDetailOrderId.Text = dgvDetailOrder.CurrentRow.Cells[0].Value.ToString();
+            txtProductId.Text = dgvDetailOrder.CurrentRow.Cells[2].Value.ToString();
         }
 
         private void buttonExcel_Click(object sender, EventArgs e)

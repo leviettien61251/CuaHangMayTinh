@@ -28,7 +28,6 @@ namespace CuaHangMayTinh.Views.Report
 
             // Gán sự kiện
             btnViewReport.Click += btnViewReport_Click;
-            btnExport.Click += btnExport_Click;
         }
 
         private void btnViewReport_Click(object sender, EventArgs e)

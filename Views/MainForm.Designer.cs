@@ -43,10 +43,6 @@
             this.Revenue = new System.Windows.Forms.ToolStripMenuItem();
             this.Inventory = new System.Windows.Forms.ToolStripMenuItem();
             this.BestSeller = new System.Windows.Forms.ToolStripMenuItem();
-            this.formToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.FormTest = new System.Windows.Forms.ToolStripMenuItem();
-            this.frmCustomerManagement = new System.Windows.Forms.ToolStripMenuItem();
-            this.FormTestSanPham = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,8 +52,7 @@
             this.hệThốngToolStripMenuItem,
             this.Management,
             this.Sale,
-            this.Report,
-            this.formToolStripMenuItem});
+            this.Report});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1184, 24);
@@ -76,14 +71,14 @@
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(129, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // Management
             // 
@@ -133,7 +128,7 @@
             // Order
             // 
             this.Order.Name = "Order";
-            this.Order.Size = new System.Drawing.Size(180, 22);
+            this.Order.Size = new System.Drawing.Size(148, 22);
             this.Order.Text = "Tạo đơn hàng";
             // 
             // Report
@@ -150,50 +145,20 @@
             // Revenue
             // 
             this.Revenue.Name = "Revenue";
-            this.Revenue.Size = new System.Drawing.Size(180, 22);
+            this.Revenue.Size = new System.Drawing.Size(178, 22);
             this.Revenue.Text = "Doanh thu";
             // 
             // Inventory
             // 
             this.Inventory.Name = "Inventory";
-            this.Inventory.Size = new System.Drawing.Size(180, 22);
+            this.Inventory.Size = new System.Drawing.Size(178, 22);
             this.Inventory.Text = "Tồn kho";
             // 
             // BestSeller
             // 
             this.BestSeller.Name = "BestSeller";
-            this.BestSeller.Size = new System.Drawing.Size(180, 22);
+            this.BestSeller.Size = new System.Drawing.Size(178, 22);
             this.BestSeller.Text = "Sản phẩm bán chạy";
-            // 
-            // formToolStripMenuItem
-            // 
-            this.formToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.FormTest,
-            this.frmCustomerManagement,
-            this.FormTestSanPham});
-            this.formToolStripMenuItem.Name = "formToolStripMenuItem";
-            this.formToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
-            this.formToolStripMenuItem.Text = "Form";
-            this.formToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.formToolStripMenuItem_DropDownItemClicked);
-            this.formToolStripMenuItem.Click += new System.EventHandler(this.formToolStripMenuItem_Click);
-            // 
-            // FormTest
-            // 
-            this.FormTest.Name = "FormTest";
-            this.FormTest.Size = new System.Drawing.Size(197, 22);
-            this.FormTest.Text = "FormTest";
-            // 
-            // frmCustomerManagement
-            // 
-            this.frmCustomerManagement.Name = "frmCustomerManagement";
-            this.frmCustomerManagement.Size = new System.Drawing.Size(197, 22);
-            this.frmCustomerManagement.Text = "CustomerManagement";
-            // 
-            // FormTestSanPham
-            // 
-            this.FormTestSanPham.Name = "FormTestSanPham";
-            this.FormTestSanPham.Size = new System.Drawing.Size(197, 22);
-            this.FormTestSanPham.Text = "FormTestSanPham";
             // 
             // MainForm
             // 
@@ -230,10 +195,6 @@
         private System.Windows.Forms.ToolStripMenuItem Revenue;
         private System.Windows.Forms.ToolStripMenuItem Inventory;
         private System.Windows.Forms.ToolStripMenuItem BestSeller;
-        private System.Windows.Forms.ToolStripMenuItem formToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem FormTest;
-        private System.Windows.Forms.ToolStripMenuItem frmCustomerManagement;
-        private System.Windows.Forms.ToolStripMenuItem FormTestSanPham;
         private System.Windows.Forms.ToolStripMenuItem Order;
     }
 }
